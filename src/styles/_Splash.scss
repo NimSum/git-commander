@@ -1,0 +1,14 @@
+section.splash-page {
+  height: 90vh;
+  
+
+  .form-item-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    #userName {
+      text-align: center;
+    }
+  }
+}
