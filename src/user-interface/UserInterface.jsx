@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { ChallengeCard } from './ChallengeCard';
+import { ChargeBar } from './ChargeBar';
 
 export class UserInterface extends Component {
   constructor(props) {
@@ -7,10 +9,17 @@ export class UserInterface extends Component {
       
     }
   }
+  
   render() {
     return (
       <aside className="user-interface">
-        <p>aside</p>
+        <h2>Commander: Nimsum</h2>
+        < ChallengeCard />
+        < ChargeBar />
+        <form>
+          <label for="command-input">Command Center</label>
+          <input id="command-input" type="text"></input>
+        </form>
       </aside>
     )
   }

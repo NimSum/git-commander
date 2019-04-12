@@ -1,0 +1,9 @@
+div.charge-bar-container {
+  display: flex;
+  padding: 10px;
+
+  span.charge-bar {
+    flex: 1;
+    height: 20px;
+  }
+}

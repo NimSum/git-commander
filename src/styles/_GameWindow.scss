@@ -1,6 +1,6 @@
 section.game-window {
     background: url('./images/game-background.jpg');
-    animation: 1000s flow infinite linear;
+    // animation: 1000s flow infinite linear;
     background-repeat: repeat-y;
     width: 100%;
     height: 85vh;
@@ -14,7 +14,7 @@ section.game-window {
   .obstacle {
     width: 20%;
     margin: 20px;
-    animation: 10s spin infinite linear;
+    // animation: 10s spin infinite linear;
   }
 
   @keyframes spin {
