@@ -6,25 +6,38 @@ export class UserInterface extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentQuestion: null,
-      currDifficulty: 1
+      currentQuestion: {},
+      currDifficulty: 1,
+      userAnswer: ''
     }
   }
 
   componentDidMount() {
-    this.setState({currentQuestion: this.props.challenges})
+    const randomQuestion = this.props.challenges.filter(challenge => challenge.difficulty === this.state.currDifficulty.toString()).pop();
+    this.setState( {currentQuestion: randomQuestion} )
+  }
+
+  verifyAnswer = e => {
+    e.preventDefault();
+    if(this.state.currentQuestion.answer === this.state.userAnswer) {
+      e.target.reset();
+      console.log('YOU GOOD')
+    }
+  }
+
+  handleChange = e => {
+    this.setState({ userAnswer: e.target.value })
   }
 
   render() {
-
     return (
       <aside className="user-interface">
         <h2>Commander { this.props.playerName }</h2>
-        < ChallengeCard />
+        < ChallengeCard challenge={this.state.currentQuestion}/>
         < ChargeBar />
-        <form>
+        <form onSubmit={ this.verifyAnswer }>
           <label htmlFor="command-input">Command Center</label>
-          <input id="command-input" type="text"></input>
+          <input onChange={ this.handleChange } id="command-input" type="text"/>
         </form>
       </aside>
     )
