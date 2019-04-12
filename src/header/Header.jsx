@@ -5,7 +5,6 @@ export default class Header extends Component {
     return (
       <header>
         <h1>GIT COMMANDER</h1>
-        <p>HELLOOOOOOO</p>
       </header>
     )
   }

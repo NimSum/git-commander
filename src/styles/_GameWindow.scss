@@ -1,0 +1,25 @@
+section.game-window {
+    background: url('./images/game-background.jpg');
+    animation: 1000s flow infinite linear;
+    background-repeat: repeat-y;
+    width: 100%;
+    height: 85vh;
+  
+  @keyframes flow{
+    100%{
+      background-position: 0 -200000%;
+    }
+  }
+
+  .obstacle {
+    width: 20%;
+    margin: 20px;
+    animation: 10s spin infinite linear;
+  }
+
+  @keyframes spin {
+      from {transform:rotate(0deg);}
+      to {transform:rotate(360deg);}
+  }
+
+}
