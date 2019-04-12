@@ -1,0 +1,11 @@
+*, 
+*::before, 
+*::after {
+  box-sizing: border-box;
+  border: 1px dotted black;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
