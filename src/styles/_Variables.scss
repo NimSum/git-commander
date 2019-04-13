@@ -38,3 +38,44 @@ $headerFont: 'Bungee Outline', cursive;
     background-position: 0 2000%;
   }
 }
+
+.ship-position-1 {
+  left: 50%; 
+}
+
+.obstacle-pos-10 {
+  left: 0;
+}
+.obstacle-pos-20 {
+  left: 10%;
+}
+.obstacle-pos-30 {
+  left: 30%;
+}
+.obstacle-pos-40 {
+  left: 50%;
+}
+.obstacle-pos-50 {
+  left: 70%;
+}
+
+.obstacle-pos-11 {
+  left: 0;
+  top: 10%;
+}
+.obstacle-pos-21 {
+  left: 10%;
+  top: 10%;
+}
+.obstacle-pos-31 {
+  left: 30%;
+  top: 10%;
+}
+.obstacle-pos-41 {
+  left: 50%;
+  top: 10%;
+}
+.obstacle-pos-51 {
+  left: 70%;
+  top: 10%;
+}
