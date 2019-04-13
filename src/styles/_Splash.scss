@@ -2,6 +2,7 @@ section.splash-page {
   position: relative;
   height: 100vh;
   text-align: center;
+  font-family: $secondaryFont;
 
   &:before {
     content: "";
@@ -40,14 +41,22 @@ section.splash-page {
     flex-direction: column;
     text-align: center;
 
+    label {
+      padding: 10px;
+      font-size: 1.2rem;
+    }
+
     #userName {
       font-size: 2rem;
+      text-align: center;
       height: 50px;
     }
     
     .start-game-btn {
-      display: block;
       height: 50px;
+      font-size: 1.5rem;
+
+      font-weight: bold;
     }
   }
 }

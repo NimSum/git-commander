@@ -27,7 +27,7 @@ export class Splash extends Component {
             <input 
               id="userName" 
               type="text" 
-              onChange={this.handleChange} 
+              onChange={ this.handleChange } 
               autoFocus />
             <input 
               className="start-game-btn" 
@@ -38,7 +38,7 @@ export class Splash extends Component {
         </form>
         <img 
           className="octocat-ship" 
-          src={require("../images/code-octocat.png")} 
+          src={ require("../images/code-octocat.png") } 
           alt="octocat"/>
       </section>
     )
