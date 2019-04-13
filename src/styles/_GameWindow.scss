@@ -9,6 +9,13 @@ section.game-window {
   .obstacle {
     width: 20%;
     margin: 20px;
+    position: absolute;
     // animation: 10s spin infinite linear;
+  }
+
+  .octo-ship {
+    width: 20%;
+    position: absolute;
+    bottom: 0;
   }
 }
