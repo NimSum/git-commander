@@ -29,7 +29,13 @@ class App extends Component {
     })
   }
 
+  nextRound = () => {
+    this.setState( {
+      currentRound: this.state.currentRound + 1
+    })
+  }
 
+  
 
   render() {
     return (
@@ -42,7 +48,8 @@ class App extends Component {
           (<main>
             < GameWindow />
             < UserInterface 
-              {...this.state}
+              nextRound={ this.nextRound }
+              { ...this.state }
             />
           </main>) }    
       </div>
