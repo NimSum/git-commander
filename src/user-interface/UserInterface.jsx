@@ -6,17 +6,21 @@ export class UserInterface extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentQuestion: {},
+      currentQuestion: null,
       currDifficulty: 1,
+      questionsByDiff: [],
       userAnswer: ''
     }
   }
 
-  generateChallenge() {
-    const randomQuestion = this.props.challenges
-    .filter(challenge => challenge.difficulty === this.state.currDifficulty.toString())
-    .pop();
-    this.setState( {currentQuestion: randomQuestion} )
+  generateChallenge = () => {
+    const questionsByDiff = this.props.challenges
+      .filter(challenge => challenge.difficulty === this.state.currDifficulty.toString())
+      .sort(() => .5 - Math.random());
+    this.setState({
+      questionsByDiff: questionsByDiff, 
+      currentQuestion: questionsByDiff.pop()
+    })
   }
 
   componentDidMount() {
@@ -29,15 +33,16 @@ export class UserInterface extends Component {
       e.target.reset();
       this.changeDifficulty();
       this.props.nextRound();
-      this.generateChallenge();
     }
   }
 
   changeDifficulty() {
     if (this.state.currDifficulty < 5) {
       this.setState({
-        currDifficulty: this.state.currDifficulty + Math.round(Math.random() + .05)
-      })
+        currDifficulty: this.state.currDifficulty + Math.round(Math.random() + .1)
+      }, () => this.generateChallenge())
+    } else {
+      this.generateChallenge();
     }
   }
 
@@ -49,7 +54,7 @@ export class UserInterface extends Component {
     return (
       <aside className="user-interface">
         <h2>Commander { this.props.playerName }</h2>
-        < ChallengeCard challenge={this.state.currentQuestion}/>
+        { this.state.currentQuestion && < ChallengeCard challenge={ this.state.currentQuestion }/> }
         <form onSubmit={ this.verifyAnswer }>
           <label htmlFor="command-input">Command Center</label>
           <input onChange={ this.handleChange } id="command-input" type="text" autoFocus/>
