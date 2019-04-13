@@ -13,15 +13,25 @@ export class UserInterface extends Component {
   }
 
   componentDidMount() {
-    const randomQuestion = this.props.challenges.filter(challenge => challenge.difficulty === this.state.currDifficulty.toString()).pop();
+    const randomQuestion = this.props.challenges
+      .filter(challenge => challenge.difficulty === this.state.currDifficulty.toString())
+      .pop();
     this.setState( {currentQuestion: randomQuestion} )
   }
 
   verifyAnswer = e => {
     e.preventDefault();
-    if(this.state.currentQuestion.answer === this.state.userAnswer) {
+    if (this.state.currentQuestion.answer === this.state.userAnswer) {
       e.target.reset();
-      console.log('YOU GOOD')
+      this.changeDifficulty();
+    }
+  }
+
+  changeDifficulty() {
+    if (this.state.currDifficulty < 5) {
+      this.setState({
+        currDifficulty: this.state.currDifficulty + Math.round(Math.random() + .05)
+      })
     }
   }
 
