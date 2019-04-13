@@ -38,7 +38,7 @@ export class Splash extends Component {
         </form>
         <img 
           className="octocat-ship" 
-          src={ require("../images/code-octocat.png") } 
+          src={ require("../images/jetpacktocat.png") } 
           alt="octocat"/>
       </section>
     )
