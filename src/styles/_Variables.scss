@@ -1,3 +1,39 @@
 @import url('https://fonts.googleapis.com/css?family=Bungee+Outline');
 
 $secondaryFont: 'Open Sans', sans-serif;
+
+
+@keyframes upDown {
+  0% { 
+    bottom: 30%;
+    left: 20%;
+  }
+  50% { 
+    bottom: 33%;
+    left: 20%;
+  }
+}
+
+@keyframes flow{
+  100%{
+    background-position: 0 100000%;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes forward {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 2000%;
+  }
+}

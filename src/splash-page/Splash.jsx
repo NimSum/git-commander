@@ -24,7 +24,7 @@ export class Splash extends Component {
         <form onSubmit={ this.startGame }>
           <div className="form-item-container">
             <label htmlFor="userName">Your Commander Name:</label>
-            <input id="userName" type="text" onChange={this.handleChange}/>
+            <input id="userName" type="text" onChange={this.handleChange} />
             <input className="start-game-btn" type="button" onClick={ this.startGame } value="Let's git started!"/>
           </div>
         </form>

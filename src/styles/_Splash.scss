@@ -8,12 +8,13 @@ section.splash-page {
     position: absolute;
     width: 200%;
     height: 200%;
+    opacity: .8;
     top: -50%;
     left: -50%;
     z-index: -1;
-    background: url('./images/game-background.jpg') 0 0 repeat;
+    background: url('./images/star-background.jpg') 0 0 repeat;
     transform: rotate(90deg);
-    animation: forward 300s linear infinite
+    animation: forward 600s linear infinite
   }
 
   h2 {
@@ -24,32 +25,12 @@ section.splash-page {
     margin-top: 10%;
   }
 
-  @keyframes forward {
-    from {
-      background-position: 0 0;
-    }
-    to {
-      background-position: 0 2000%;
-    }
-  }
-
   .octocat-ship {
     width: 20%;
     position: absolute;
     bottom: 30%;
     left: 20%;
-    animation: upDown 2s alternate infinite;
-  }
-
-  @keyframes upDown {
-    from {
-      bottom: 30%;
-      left: 20%;
-    }
-    to {
-      bottom: 35%;
-      left: 20%;
-    }
+    animation: upDown 5s alternate infinite;
   }
 
   .form-item-container {
