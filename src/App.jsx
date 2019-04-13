@@ -46,7 +46,8 @@ class App extends Component {
     : (<div>
         < Header />
         <main>
-          < GameWindow />
+          < GameWindow 
+            currRound={ this.state.currentRound }/>
           < UserInterface 
             nextRound={ this.nextRound }
             { ...this.state }
