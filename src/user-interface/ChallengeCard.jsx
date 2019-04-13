@@ -2,7 +2,7 @@ import React from 'react';
 
 export function ChallengeCard (props) {
   return (
-    <article>
+    <article className="challenge-card">
       <div>
         <p>{props.challenge.statement}</p>
       </div>

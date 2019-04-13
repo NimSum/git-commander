@@ -1,0 +1,23 @@
+aside.user-interface {
+  font-family: $secondaryFont;
+  text-align: center;
+
+  h2 {
+    flex: 1;
+  }
+
+  form {
+    flex: 2;
+    height: 20%;
+    margin: auto;
+    width: 50%;
+
+    label {
+      display: block;
+    }
+    
+    input {
+      width: 100%;
+    }
+  }
+}

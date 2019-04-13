@@ -1,9 +1,13 @@
-div.charge-bar-container {
-  display: flex;
+section.charge-bar-container {
   padding: 10px;
 
-  span.charge-bar {
-    flex: 1;
-    height: 20px;
+  div {
+    display: flex;
+    justify-content: center;
+
+    span.charge-bar {
+      width: 30%;
+      height: 20px;
+    }
   }
 }

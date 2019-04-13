@@ -50,11 +50,11 @@ export class UserInterface extends Component {
       <aside className="user-interface">
         <h2>Commander { this.props.playerName }</h2>
         < ChallengeCard challenge={this.state.currentQuestion}/>
-        < ChargeBar />
         <form onSubmit={ this.verifyAnswer }>
           <label htmlFor="command-input">Command Center</label>
-          <input onChange={ this.handleChange } id="command-input" type="text"/>
+          <input onChange={ this.handleChange } id="command-input" type="text" autoFocus/>
         </form>
+        < ChargeBar />
       </aside>
     )
   }
