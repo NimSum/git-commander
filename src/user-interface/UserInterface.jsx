@@ -12,11 +12,15 @@ export class UserInterface extends Component {
     }
   }
 
-  componentDidMount() {
+  generateChallenge() {
     const randomQuestion = this.props.challenges
-      .filter(challenge => challenge.difficulty === this.state.currDifficulty.toString())
-      .pop();
+    .filter(challenge => challenge.difficulty === this.state.currDifficulty.toString())
+    .pop();
     this.setState( {currentQuestion: randomQuestion} )
+  }
+
+  componentDidMount() {
+    this.generateChallenge();
   }
 
   verifyAnswer = e => {
@@ -24,6 +28,8 @@ export class UserInterface extends Component {
     if (this.state.currentQuestion.answer === this.state.userAnswer) {
       e.target.reset();
       this.changeDifficulty();
+      this.props.nextRound();
+      this.generateChallenge();
     }
   }
 
