@@ -38,22 +38,21 @@ class App extends Component {
   
 
   render() {
-    return (
-      <div>
+    return !this.state.startGame 
+    ? (<div>
+        < Splash 
+          startGame={ this.startGame }/> 
+      </div>)
+    : (<div>
         < Header />
-        { !this.state.startGame && 
-          < Splash 
-            startGame={ this.startGame }/> }
-        { this.state.startGame && 
-          (<main>
-            < GameWindow />
-            < UserInterface 
-              nextRound={ this.nextRound }
-              { ...this.state }
-            />
-          </main>) }    
-      </div>
-    );
+        <main>
+          < GameWindow />
+          < UserInterface 
+            nextRound={ this.nextRound }
+            { ...this.state }
+          />
+        </main>   
+      </div>)
   }
 }
 

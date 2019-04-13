@@ -20,7 +20,7 @@ export class UserInterface extends Component {
   }
 
   componentDidMount() {
-    this.generateChallenge()
+    this.generateChallenge();
   }
 
   verifyAnswer = e => {

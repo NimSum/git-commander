@@ -1,14 +1,74 @@
 section.splash-page {
-  height: 90vh;
-  
+  position: relative;
+  height: 100vh;
+  text-align: center;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    z-index: -1;
+    background: url('./images/game-background.jpg') 0 0 repeat;
+    transform: rotate(90deg);
+    animation: forward 300s linear infinite
+  }
+
+  h2 {
+    font-family: 'Bungee Outline', cursive;
+    letter-spacing: 3px;
+    color: red;
+    font-size: 70px;
+    margin-top: 10%;
+  }
+
+  @keyframes forward {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 0 2000%;
+    }
+  }
+
+  .octocat-ship {
+    width: 20%;
+    position: absolute;
+    bottom: 30%;
+    left: 20%;
+    animation: upDown 2s alternate infinite;
+  }
+
+  @keyframes upDown {
+    from {
+      bottom: 30%;
+      left: 20%;
+    }
+    to {
+      bottom: 35%;
+      left: 20%;
+    }
+  }
 
   .form-item-container {
+    color: white;
     display: flex;
+    width: 30%;
+    margin: auto;
     flex-direction: column;
     text-align: center;
 
     #userName {
       text-align: center;
+      font-size: 2rem;
+      height: 50px;
+    }
+
+    .start-game-btn {
+      height: 50px;
+      font-size: 1.5rem;
     }
   }
 }
