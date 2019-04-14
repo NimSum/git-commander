@@ -46,7 +46,7 @@ describe('User Interface' , () => {
   });
 
   it('Should match render snapshot', () => {
-    
+    expect(wrapper).toMatchSnapshot();
   })
 
   it('Should automatically update states when mounted using generateChallenge', () => {
@@ -74,6 +74,12 @@ describe('User Interface' , () => {
     expect(mockNextRound).toHaveBeenCalled();
   })
 
+  it('Should change difficulty', () => {
+    const spy = jest.spyOn(wrapper.instance(), 'generateChallenge');
+    
+    wrapper.instance().changeDifficulty();
+    expect(spy).toHaveBeenCalled();
+  })
 
 
 })
