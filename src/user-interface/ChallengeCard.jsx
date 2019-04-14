@@ -12,3 +12,5 @@ export function ChallengeCard (props) {
     </article>
   )
 }
+
+export default ChallengeCard;

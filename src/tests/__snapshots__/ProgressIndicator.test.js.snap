@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Progress Indicator Should render card based on current round 1`] = `
+<div
+  className="progress-indicator"
+>
+  <span>
+    Remote
+  </span>
+  <span />
+  <span />
+  <span
+    className="current-round"
+  />
+  <span
+    className="current-round"
+  />
+  <span
+    className="current-round"
+  >
+    Local
+  </span>
+</div>
+`;

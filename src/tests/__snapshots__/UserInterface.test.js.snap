@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User Interface Should match render snapshot 1`] = `
+<aside
+  className="user-interface"
+>
+  <h2>
+    Commander 
+  </h2>
+  <ChallengeCard
+    challenge={
+      Object {
+        "answer": "git checkout steer-ship",
+        "detail": "Switch to the branch called \\"steer-ship\\" to avoid the obstacle",
+        "difficulty": "1",
+        "id": "1",
+        "moreInfo": "/////A link to where they could read more about this command",
+        "statement": "Our Git spaceship needs to switch to a different branch to steer the ship!",
+      }
+    }
+  />
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="command-input"
+    >
+      Command Center
+    </label>
+    <input
+      autoFocus={true}
+      id="command-input"
+      onChange={[Function]}
+      type="text"
+    />
+  </form>
+  <ChargeBar />
+</aside>
+`;

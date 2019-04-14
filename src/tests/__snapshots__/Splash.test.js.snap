@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Progress Indicator Should match rendered snapshot 1`] = `
+<section
+  className="splash-page"
+>
+  <h2>
+    GIT COMMANDER
+  </h2>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-item-container"
+    >
+      <label
+        htmlFor="userName"
+      >
+        Your Commander Name:
+      </label>
+      <input
+        autoFocus={true}
+        id="userName"
+        onChange={[Function]}
+        type="text"
+      />
+      <input
+        className="start-game-btn"
+        onClick={[Function]}
+        type="button"
+        value="Start Game"
+      />
+    </div>
+  </form>
+  <img
+    alt="octocat"
+    className="octocat-ship "
+    src="jetpacktocat.png"
+  />
+</section>
+`;
