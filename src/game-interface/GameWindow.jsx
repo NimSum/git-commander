@@ -5,31 +5,57 @@ export class GameWindow extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      shipPosition: 1,
       clearPath: Math.round(Math.random() * (5 - 1) + 1),
-      obstaclePositions: [1, 2, 3, 4, 5]
+      obstacles: [],
+      obstaclePositions: []
     }
   }
 
-  generateObstacles() {
-    const obstacleContainer = []
-    for (let i = 0; i <= this.props.currRound; i++) {
-      obstacleContainer.push(
-        ( <img 
-          className={`obstacle obstacle-pos-${i+1}${Math.round(Math.random())}`}
-          src="http://clipart-library.com/image_gallery/n756983.gif" 
-          alt="obstacle" />)
-      )
+  componentWillReceiveProps(nextProps) {
+    if(this.props.currRound !== nextProps) {
+      this.generateObstacles();
     }
-    return obstacleContainer;
+  }
+
+  componentDidMount() {
+    this.generateObstacles();
+  }
+
+  generateObstacles() {
+    const obstacles = [];
+    const obstaclePositions = [];
+    for (let i = 0; i <= this.props.currRound + 2; i++) {
+      let randomLocation = Math.round(Math.random() * (5 - 1) + 1);
+      let position = this.state.clearPath === randomLocation
+        ? randomLocation + 1 + Math.round(Math.random()).toString()
+        : randomLocation + Math.round(Math.random()).toString();
+      obstaclePositions.push(position);
+      obstacles.push(
+      ( <img 
+        className={`obstacle obstacle-pos-${position}`}
+        key={i}
+        src="http://clipart-library.com/image_gallery/n756983.gif" 
+        alt="obstacle" />))
+    }
+    this.setState({obstacles: obstacles, obstaclePositions: obstaclePositions})
+  }
+
+  setCollitionCourse() {
+    return this.state.obstaclePositions.length 
+      ? parseInt(this.state.obstaclePositions
+        .sort(() => .5 - Math.random())
+        .pop()
+        .toString()
+        .charAt(0))
+    : 1;
   }
 
   render() {
     return (
       <section className="game-window">
-        {this.generateObstacles()}
+        {this.state.obstacles}
         <img 
-          className={`octo-ship ship-position-${this.state.shipPosition}` }
+          className={`octo-ship ship-position-${this.setCollitionCourse()}` }
           src={ require("../images/jetpacktocat.png") }
           alt="obstacle" />
         < ProgressIndicator 

@@ -15,7 +15,7 @@ $headerFont: 'Bungee Outline', cursive;
   }
 }
 
-@keyframes flow{
+@keyframes flow {
   100%{
     background-position: 0 100000%;
   }
@@ -40,42 +40,67 @@ $headerFont: 'Bungee Outline', cursive;
 }
 
 .ship-position-1 {
-  left: 50%; 
+  left: 0%; 
 }
+
+.ship-position-2 {
+  left: 20%; 
+}
+
+.ship-position-3 {
+  left: 40%; 
+}
+
+.ship-position-4 {
+  left: 60%; 
+}
+
+.ship-position-5 {
+  left: 80%; 
+}
+
 
 .obstacle-pos-10 {
   left: 0;
 }
 .obstacle-pos-20 {
-  left: 10%;
+  left: 20%;
 }
 .obstacle-pos-30 {
-  left: 30%;
+  left: 40%;
 }
 .obstacle-pos-40 {
-  left: 50%;
+  left: 60%;
 }
 .obstacle-pos-50 {
-  left: 70%;
+  left: 80%;
+}
+.obstacle-pos-60 {
+  left: 40%;
+  top: 30%;
 }
 
 .obstacle-pos-11 {
   left: 0;
-  top: 10%;
+  top: 20%;
 }
 .obstacle-pos-21 {
-  left: 10%;
+  left: 20%;
   top: 10%;
 }
 .obstacle-pos-31 {
-  left: 30%;
-  top: 10%;
+  left: 40%;
+  top: 15%;
 }
 .obstacle-pos-41 {
-  left: 50%;
-  top: 10%;
+  left: 60%;
+  top: 13%;
 }
 .obstacle-pos-51 {
-  left: 70%;
-  top: 10%;
+  left: 80%;
+  top: 19%;
+}
+.obstacle-pos-61 {
+  left: 80%;
+  top: 30%;
 }
