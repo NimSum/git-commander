@@ -23,10 +23,12 @@ $headerFont: 'Bungee Outline', cursive;
 
 @keyframes spin {
   from {
-    transform:rotate(0deg);
+    transform: rotate(0deg);
+
   }
   to {
-    transform:rotate(360deg);
+    transform: rotate(360deg);
+
   }
 }
 
@@ -118,4 +120,9 @@ $headerFont: 'Bungee Outline', cursive;
 .obstacles-move {
   transition: transform 3s ease-in-out;
   transform: translate(0, 90vh)
-};
+}
+
+.octo-forward {
+  transition: transform 2.5s ease-in-out;
+  transform: translate(100vw, 0)
+}

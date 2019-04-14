@@ -18,6 +18,10 @@ export class GameWindow extends Component {
       this.moveOctocat();
     }
   }
+  
+  componentDidMount() {
+    this.generateObstacles();
+  }
 
   moveOctocat() {
     this.setState({
@@ -30,11 +34,7 @@ export class GameWindow extends Component {
           moveObstacle: !this.state.moveObstacle
         }, this.generateObstacles);
       }, 3000)) 
-  }
-
-  componentDidMount() {
-    this.generateObstacles();
-  }
+  } 
 
   generateObstacles = () => {
     const obstacles = [];
@@ -59,21 +59,26 @@ export class GameWindow extends Component {
   }
 
   setCollitionCourse() {
-    const position = this.state.obstaclePositions.length 
-      ? parseInt(this.state.obstaclePositions
-        .sort(() => .5 - Math.random())
-        .pop()
-        .toString()
-        .charAt(0))
-      : 1;
-    this.setState({octoCatPosition: position})
+    const changePos = !this.state.obstaclePositions.some(num => (this.state.octoCatPosition + '1') === num)
+    if(changePos) {
+      this.setState({octoCatPosition: this.state.obstaclePositions.length 
+        ? parseInt(this.state.obstaclePositions
+          .sort(() => .5 - Math.random())
+          .pop()
+          .toString()
+          .charAt(0))
+        : 1
+      })
+    }
   }
 
   render() {
     return (
       <section className="game-window">
         <div 
-          className={`obstacle-container ${this.state.moveObstacle ? 'obstacles-move' : undefined}`}>{this.state.obstacles}</div>
+          className={`obstacle-container ${this.state.moveObstacle ? 'obstacles-move' : undefined}`}>
+          {this.state.obstacles}
+        </div>
         <img 
           className={`octo-ship ship-position-${this.state.octoCatPosition}` }
           src={ require("../images/jetpacktocat.png") }

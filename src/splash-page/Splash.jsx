@@ -4,7 +4,8 @@ export class Splash extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userName: ''
+      userName: '',
+      octoForward: false
     }
   }
 
@@ -14,7 +15,13 @@ export class Splash extends Component {
 
   startGame = e => {
     e.preventDefault();
-    this.props.startGame(this.state.userName);
+    this.setState( {octoForward: true} )
+    setTimeout(
+      ()=> this.props.startGame(this.state.userName),
+      2000
+      )
+;
+    
   }
 
   render() {
@@ -33,11 +40,11 @@ export class Splash extends Component {
               className="start-game-btn" 
               type="button" 
               onClick={ this.startGame } 
-              value="Let's git started!"/>
+              value={this.state.octoForward ? "Let's git Started!" : 'Start Game'}/>
           </div>
         </form>
         <img 
-          className="octocat-ship" 
+          className={`octocat-ship ${this.state.octoForward ? 'octo-forward' : '' }`}
           src={ require("../images/jetpacktocat.png") } 
           alt="octocat"/>
       </section>
