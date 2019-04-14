@@ -27,8 +27,7 @@ export class GameWindow extends Component {
     this.setState({
       octoCatPosition: this.state.clearPath,
       moveObstacle: !this.state.moveObstacle
-    }, 
-      () => setTimeout(()=> {
+    }, () => setTimeout(()=> {
         this.setState({
           clearPath: Math.round(Math.random() * (5 - 1) + 1),
           moveObstacle: !this.state.moveObstacle

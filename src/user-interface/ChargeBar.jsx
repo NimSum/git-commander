@@ -12,3 +12,5 @@ export function ChargeBar (props) {
     </section>
     )
 }
+
+export default ChargeBar;

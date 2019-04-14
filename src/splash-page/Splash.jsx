@@ -17,11 +17,9 @@ export class Splash extends Component {
     e.preventDefault();
     this.setState( {octoForward: true} )
     setTimeout(
-      ()=> this.props.startGame(this.state.userName),
-      2000
-      )
-;
-    
+      ()=> this.props.startGame(this.state.userName)
+    , 2000
+    )
   }
 
   render() {
@@ -52,4 +50,4 @@ export class Splash extends Component {
   }
 }
 
-export default Splash
+export default Splash;

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Charge Bar Should generate match charge bar snapshot 1`] = `
+<section
+  className="charge-bar-container"
+>
+  <h3>
+    Lazer Beam Charge:
+  </h3>
+  <div>
+    <span
+      className="charge-bar"
+    />
+    <span
+      className="charge-bar"
+    />
+    <span
+      className="charge-bar"
+    />
+  </div>
+</section>
+`;
