@@ -40,41 +40,46 @@ $headerFont: 'Bungee Outline', cursive;
 }
 
 .ship-position-1 {
-  transform: translate(0 , 0);
+  transform: translate(0 , -100px);
 }
 
 .ship-position-2 {
-  transform: translate(10vw, 0);
+  transform: translate(10vw, -200px);
 }
 
 .ship-position-3 {
-  transform: translate(22vw, 0);
+  transform: translate(22vw, -150px);
 }
 
 .ship-position-4 {
-  transform: translate(34vw, 0);
+  transform: translate(34vw, -20px);
 }
 
 .ship-position-5 {
-  transform: translate(46vw, 0);
+  transform: translate(46vw, -80px);
 }
 
 
 .obstacle-pos-10 {
   left: 0;
 }
+
 .obstacle-pos-20 {
   left: 20%;
 }
+
 .obstacle-pos-30 {
   left: 40%;
 }
+
 .obstacle-pos-40 {
   left: 60%;
 }
+
 .obstacle-pos-50 {
   left: 80%;
 }
+
 .obstacle-pos-60 {
   left: 40%;
   top: 30%;
@@ -84,23 +89,33 @@ $headerFont: 'Bungee Outline', cursive;
   left: 0;
   top: 20%;
 }
+
 .obstacle-pos-21 {
   left: 20%;
   top: 10%;
 }
+
 .obstacle-pos-31 {
   left: 40%;
   top: 15%;
 }
+
 .obstacle-pos-41 {
   left: 60%;
   top: 13%;
 }
+
 .obstacle-pos-51 {
   left: 80%;
   top: 19%;
 }
+
 .obstacle-pos-61 {
   left: 20%;
   top: 30%;
 }
+
+.obstacles-move {
+  transition: transform 3s ease-in-out;
+  transform: translate(0, 90vh)
+};

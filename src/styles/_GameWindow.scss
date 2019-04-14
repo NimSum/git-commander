@@ -6,16 +6,22 @@ section.game-window {
     height: 87vh;
     position: relative;
 
-  .obstacle {
-    width: 15%;
-    margin: 20px;
-    position: absolute;
-    animation: 10s spin infinite linear;
+  div.obstacle-container {
+    position: relative;
+
+    .obstacle {
+      width: 15%;
+      margin: 20px;
+      position: absolute;
+      animation: 10s spin infinite linear;
+      transition: transform 1s ease-in-out;
+    }
   }
 
   .octo-ship {
     width: 20%;
     position: absolute;
+    z-index: 100;
     bottom: 0;
     transition: transform 1s ease-in-out;
   }

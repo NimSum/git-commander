@@ -8,7 +8,8 @@ export class GameWindow extends Component {
       clearPath: Math.round(Math.random() * (5 - 1) + 1),
       obstacles: [],
       obstaclePositions: [],
-      octoCatPosition: 1
+      octoCatPosition: 1,
+      moveObstacle: false
     }
   }
 
@@ -19,12 +20,16 @@ export class GameWindow extends Component {
   }
 
   moveOctocat() {
-    this.setState({octoCatPosition: this.state.clearPath}, 
+    this.setState({
+      octoCatPosition: this.state.clearPath,
+      moveObstacle: !this.state.moveObstacle
+    }, 
       () => setTimeout(()=> {
         this.setState({
-          clearPath: Math.round(Math.random() * (5 - 1) + 1)
+          clearPath: Math.round(Math.random() * (5 - 1) + 1),
+          moveObstacle: !this.state.moveObstacle
         }, this.generateObstacles);
-      }, 3000))
+      }, 3000)) 
   }
 
   componentDidMount() {
@@ -67,7 +72,8 @@ export class GameWindow extends Component {
   render() {
     return (
       <section className="game-window">
-        {this.state.obstacles}
+        <div 
+          className={`obstacle-container ${this.state.moveObstacle ? 'obstacles-move' : undefined}`}>{this.state.obstacles}</div>
         <img 
           className={`octo-ship ship-position-${this.state.octoCatPosition}` }
           src={ require("../images/jetpacktocat.png") }
