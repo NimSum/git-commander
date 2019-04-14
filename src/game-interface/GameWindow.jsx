@@ -7,21 +7,29 @@ export class GameWindow extends Component {
     this.state = {
       clearPath: Math.round(Math.random() * (5 - 1) + 1),
       obstacles: [],
-      obstaclePositions: []
+      obstaclePositions: [],
+      octoCatPosition: 1
     }
   }
 
   componentWillReceiveProps(nextProps) {
     if(this.props.currRound !== nextProps) {
-      this.generateObstacles();
+      this.moveOctocat();
     }
+  }
+
+  moveOctocat() {
+    this.setState({octoCatPosition: this.state.clearPath}, 
+      () => setTimeout(()=> {
+        this.setState({clearPath: Math.round(Math.random() * (5 - 1) + 1)},         this.generateObstacles);
+      }, 3000))
   }
 
   componentDidMount() {
     this.generateObstacles();
   }
 
-  generateObstacles() {
+  generateObstacles = () => {
     const obstacles = [];
     const obstaclePositions = [];
     for (let i = 0; i <= this.props.currRound + 2; i++) {
@@ -37,17 +45,19 @@ export class GameWindow extends Component {
         src="http://clipart-library.com/image_gallery/n756983.gif" 
         alt="obstacle" />))
     }
-    this.setState({obstacles: obstacles, obstaclePositions: obstaclePositions})
+    this.setState({obstacles: obstacles, obstaclePositions: obstaclePositions}, 
+      this.setCollitionCourse)
   }
 
   setCollitionCourse() {
-    return this.state.obstaclePositions.length 
+    const position = this.state.obstaclePositions.length 
       ? parseInt(this.state.obstaclePositions
         .sort(() => .5 - Math.random())
         .pop()
         .toString()
         .charAt(0))
-    : 1;
+      : 1;
+    this.setState({octoCatPosition: position})
   }
 
   render() {
@@ -55,7 +65,7 @@ export class GameWindow extends Component {
       <section className="game-window">
         {this.state.obstacles}
         <img 
-          className={`octo-ship ship-position-${this.setCollitionCourse()}` }
+          className={`octo-ship ship-position-${this.state.octoCatPosition}` }
           src={ require("../images/jetpacktocat.png") }
           alt="obstacle" />
         < ProgressIndicator 
