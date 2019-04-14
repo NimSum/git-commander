@@ -14,7 +14,7 @@ section.splash-page {
     z-index: -1;
     background: url('./images/star-background.jpg') 0 0 repeat;
     transform: rotate(90deg);
-    // animation: forward 600s linear infinite;
+    animation: forward 600s linear infinite;
   }
 
   h2 {
@@ -30,7 +30,7 @@ section.splash-page {
     position: absolute;
     bottom: 25%;
     left: 20%;
-    // animation: upDown 5s alternate infinite;
+    animation: upDown 5s alternate infinite;
   }
 
   .form-item-container {

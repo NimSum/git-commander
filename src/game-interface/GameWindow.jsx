@@ -21,7 +21,9 @@ export class GameWindow extends Component {
   moveOctocat() {
     this.setState({octoCatPosition: this.state.clearPath}, 
       () => setTimeout(()=> {
-        this.setState({clearPath: Math.round(Math.random() * (5 - 1) + 1)},         this.generateObstacles);
+        this.setState({
+          clearPath: Math.round(Math.random() * (5 - 1) + 1)
+        }, this.generateObstacles);
       }, 3000))
   }
 
@@ -45,8 +47,10 @@ export class GameWindow extends Component {
         src="http://clipart-library.com/image_gallery/n756983.gif" 
         alt="obstacle" />))
     }
-    this.setState({obstacles: obstacles, obstaclePositions: obstaclePositions}, 
-      this.setCollitionCourse)
+    this.setState({
+      obstacles: obstacles, 
+      obstaclePositions: obstaclePositions
+    }, this.setCollitionCourse)
   }
 
   setCollitionCourse() {
