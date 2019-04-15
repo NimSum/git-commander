@@ -23,7 +23,6 @@ export class GameWindow extends Component {
   
   componentDidMount() {
     this.generateObstacles();
-    this.setCollitionCourse();
   }
 
   collideWithObstacle() {
@@ -42,8 +41,9 @@ export class GameWindow extends Component {
       octoCatPosition: this.state.clearPath,
       moveObstacle: !this.state.moveObstacle
     }, () => setTimeout(()=> {
+      let possiblePos = [1,2,3,4,5].filter(num => num !== this.state.clearPath).sort(() => .5 - Math.random());
         this.setState({
-          clearPath: Math.round(Math.random() * (5 - 1) + 1),
+          clearPath: possiblePos.pop(),
           moveObstacle: !this.state.moveObstacle
         }, this.generateObstacles);
       }, 3000)) 
@@ -72,15 +72,15 @@ export class GameWindow extends Component {
   }
 
   setCollitionCourse() {
-    const changePos = !this.state.obstaclePositions.some(num => (this.state.octoCatPosition + '1') === num)
+    const changePos = !this.state.obstaclePositions.some(num => 
+      (this.state.octoCatPosition + '1') === num 
+      || (this.state.octoCatPosition + '0') === num)
     if(changePos) {
-      this.setState({octoCatPosition: this.state.obstaclePositions.length 
-        ? parseInt(this.state.obstaclePositions
+      this.setState({octoCatPosition: parseInt(this.state.obstaclePositions
           .sort(() => .5 - Math.random())
           .pop()
           .toString()
           .charAt(0))
-        : 1
       })
     }
   }
