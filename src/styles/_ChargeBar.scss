@@ -1,5 +1,6 @@
 section.charge-bar-container {
   padding: 10px;
+  height: 10%;
 
   div {
     display: flex;
@@ -8,6 +9,7 @@ section.charge-bar-container {
     span.charge-bar {
       width: 33%;
       height: 20px;
+      border: 2px solid black;
     }
   }
 }

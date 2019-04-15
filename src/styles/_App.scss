@@ -3,21 +3,20 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
-  border: 1px dotted black;
 }
 
 body {
   max-width: 2000px;
+  margin: auto;
 }
 
 header {
-  height: 7vh;
+  height: 10vh;
 }
 
 main {
   display: flex;
   height: 90vh;
-  padding: 20px;
   
   section.game-window {
     width: 60vw;

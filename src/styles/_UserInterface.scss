@@ -1,16 +1,19 @@
 aside.user-interface {
   font-family: $secondaryFont;
   text-align: center;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
 
   h2 {
-    flex: 1;
+    margin: 30px;
   }
 
   form {
-    flex: 2;
-    height: 20%;
+    height: 10%;
     margin: auto;
     width: 90%;
+    border: 2px solid black;
 
     label {
       display: block;

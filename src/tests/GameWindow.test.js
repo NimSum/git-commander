@@ -14,7 +14,7 @@ describe('Game Window' , () => {
   beforeEach(() => {
     wrapper = shallow(
       < GameWindow 
-        currRound={currRound}
+        currRound={ currRound }
       />
     );
   });

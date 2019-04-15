@@ -52,7 +52,7 @@ export class GameWindow extends Component {
   generateObstacles = () => {
     const obstacles = [];
     const obstaclePositions = [];
-    for (let i = 0; i <= this.props.currRound + 4; i++) {
+    for (let i = 0; i <= this.props.currRound + 10; i++) {
       let randomLocation = Math.round(Math.random() * (5 - 1) + 1);
       let position = this.state.clearPath === randomLocation
         ? randomLocation + 1 + Math.round(Math.random()).toString()
