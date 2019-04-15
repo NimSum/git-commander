@@ -12,8 +12,9 @@ class App extends Component {
       currentRound: 1,
       startGame: false,
       playerName: '',
-      collide: false
-    }
+      collide: false,
+      resetGame: false
+    };
   }
   
   componentDidMount() {
@@ -36,8 +37,22 @@ class App extends Component {
     })
   }
 
-  collide = () => {
-    this.setState( {collide: !this.state.collide} )
+  collide = (onOff) => {
+    this.setState( {collide: onOff }
+      , () => setTimeout(() => {
+        if (onOff) this.setState( {resetGame: true } )
+        }, 3000 ))
+  }
+
+  resetGame = () => {
+    this.setState( {
+      resetGame: 'reset',
+      currentRound: 1,
+    }, () => 
+      this.setState({
+        resetGame: false
+      })
+    )
   }
   
   render() {
@@ -57,8 +72,13 @@ class App extends Component {
             nextRound={ this.nextRound }
             { ...this.state } 
             activateCollition={ this.collide }/>
-          { this.state.currentRound === 6 && (
-            <div className="winner-prompt">
+          { this.state.resetGame && (<button 
+                onClick={ this.resetGame } 
+                type="button">
+                PPPPPRACTICE
+              </button>)}
+          { this.state.currentRound === 6 && 
+            (<div className="winner-prompt">
               <h3>You have reached Remote Repo!</h3>
               <p>You can keep going by pressing button below </p>
               <button 

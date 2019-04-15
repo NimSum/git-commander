@@ -32,13 +32,17 @@ export class UserInterface extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentRound === 7) {
       this.generateChallenge();
+    }else if (this.props.resetGame === 'reset') {
+      this.setState({
+        currDifficulty: 1
+      }, () => this.generateChallenge());
     }
   }
 
   verifyAnswer = e => {
     e.preventDefault();
+    e.target.reset();
     if (this.state.currentQuestion.answer === this.state.userAnswer) {
-      e.target.reset();
       this.saveSolvedChallenge();
       this.changeDifficulty();
       this.props.nextRound();
@@ -54,7 +58,7 @@ export class UserInterface extends Component {
   }
 
   incorrectAnswer() {
-    this.props.activateCollition();
+    this.props.activateCollition(true);
   }
 
   changeDifficulty() {

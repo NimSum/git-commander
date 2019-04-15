@@ -18,6 +18,8 @@ export class GameWindow extends Component {
       this.collideWithObstacle();
     } else if (this.props.currRound + 1 === nextProps.currentRound) {
       this.moveOctocat();
+    } else if (this.props.resetGame === 'reset') {
+      this.generateObstacles();
     }
   }
   
@@ -31,7 +33,7 @@ export class GameWindow extends Component {
         this.generateObstacles();
         this.setCollitionCourse();
         this.setState({ moveObstacle: false });
-        this.props.activateCollition();
+        this.props.activateCollition(false);
       }, 3000);
     })
   }
