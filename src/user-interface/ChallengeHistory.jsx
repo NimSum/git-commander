@@ -4,9 +4,9 @@ export function ChallengeHistory(props) {
   return (
     <section className="challenge-history">
       {props.challenges.length 
-        ? props.challenges.map(challenge => {
+        ? props.challenges.map((challenge, i) => {
         return (
-          <article>
+          <article key={i}>
             <p><span>Challenge: </span>{challenge.detail}</p>
             <p><span>Answer: </span>{challenge.answer}</p>
             <p><a 

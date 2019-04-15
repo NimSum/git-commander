@@ -43,7 +43,7 @@ export class GameWindow extends Component {
       octoCatPosition: this.state.clearPath,
       moveObstacle: !this.state.moveObstacle
     }, () => setTimeout(()=> {
-      let possiblePos = [1,2,3,4,5].filter(num => num !== this.state.clearPath).sort(() => .5 - Math.random());
+      let possiblePos = [1, 2, 3, 4, 5].filter(num => num !== this.state.clearPath).sort(() => .5 - Math.random());
         this.setState({
           clearPath: possiblePos.pop(),
           moveObstacle: !this.state.moveObstacle
@@ -89,7 +89,9 @@ export class GameWindow extends Component {
 
   render() {
     return (
-      <section className={`game-window ${this.props.currRound === 6 && 'darket-background'}`}>
+      <section 
+        className={`game-window 
+          ${this.props.currRound === 6 && 'darket-background'}`}>
         <div 
           className={`obstacle-container ${this.state.moveObstacle ? 'obstacles-move' : undefined}`}>
           {this.state.obstacles}

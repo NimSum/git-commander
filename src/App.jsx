@@ -3,6 +3,7 @@ import Header from './header/Header';
 import GameWindow from './game-interface/GameWindow';
 import UserInterface from './user-interface/UserInterface';
 import Splash from './splash-page/Splash'
+import FeedbackPrompt from './prompts/FeedbackPrompt';
 
 class App extends Component {
   constructor() {
@@ -72,21 +73,16 @@ class App extends Component {
             nextRound={ this.nextRound }
             { ...this.state } 
             activateCollition={ this.collide }/>
-          { this.state.resetGame && (<button 
-                onClick={ this.resetGame } 
-                type="button">
-                PPPPPRACTICE
-              </button>)}
+          { this.state.resetGame && 
+            < FeedbackPrompt 
+              reset={ true }
+              resetGame={ this.resetGame }
+            /> }
           { this.state.currentRound === 6 && 
-            (<div className="winner-prompt">
-              <h3>You have reached Remote Repo!</h3>
-              <p>You can keep going by pressing button below </p>
-              <button 
-                onClick={ this.nextRound } 
-                type="button">
-                git Good
-              </button>
-            </div>) }
+            < FeedbackPrompt 
+              winner={ true }
+              nextRound={ this.nextRound }
+            /> }
         </main>   
       </div>)
   }
