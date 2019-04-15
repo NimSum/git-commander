@@ -29,6 +29,12 @@ export class UserInterface extends Component {
     this.generateChallenge();
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.currentRound === 7) {
+      this.generateChallenge();
+    }
+  }
+
   verifyAnswer = e => {
     e.preventDefault();
     if (this.state.currentQuestion.answer === this.state.userAnswer) {

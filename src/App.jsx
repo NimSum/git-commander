@@ -57,6 +57,16 @@ class App extends Component {
             nextRound={ this.nextRound }
             { ...this.state } 
             activateCollition={ this.collide }/>
+          { this.state.currentRound === 6 && (
+            <div className="winner-prompt">
+              <h3>You have reached Remote Repo!</h3>
+              <p>You can keep going by pressing button below </p>
+              <button 
+                onClick={ this.nextRound } 
+                type="button">
+                git Good
+              </button>
+            </div>) }
         </main>   
       </div>)
   }

@@ -25,4 +25,30 @@ main {
   aside.user-interface {
     width: 40vw;
   }
+
+  div.winner-prompt {
+    position: absolute;
+    top: 40%;
+    text-align: center;
+    left: 5%;
+    font-family: $secondaryFont;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: hsla(255,255,255, .5);
+
+    h3 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin: 20px;
+    }
+
+    button {
+      width: 200px;
+      height: 50px;
+      font-size: 1.5rem;
+    }
+  }
 }

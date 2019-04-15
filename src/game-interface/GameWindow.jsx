@@ -87,16 +87,11 @@ export class GameWindow extends Component {
 
   render() {
     return (
-      <section className="game-window">
+      <section className={`game-window ${this.props.currRound === 6 && 'darket-background'}`}>
         <div 
           className={`obstacle-container ${this.state.moveObstacle ? 'obstacles-move' : undefined}`}>
           {this.state.obstacles}
         </div>
-        (<div>
-            <h3>You have reached Remote Repo!</h3>
-            <p>You can keep going by pressing button below </p>
-            <button>git Good</button>
-          </div>)
         <img 
           className={`octo-ship ship-position-${this.state.octoCatPosition}` }
           src={ require("../images/jetpacktocat.png") }
