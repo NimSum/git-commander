@@ -18,7 +18,7 @@ export class Splash extends Component {
     this.setState( {octoForward: true} )
     setTimeout(
       ()=> this.props.startGame(this.state.userName)
-    , 2000
+    , 100
     )
   }
 

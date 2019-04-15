@@ -7,7 +7,7 @@ export class UserInterface extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentQuestion: null,
+      currentQuestion: {},
       currDifficulty: 1,
       questionsByDiff: [],
       userAnswer: '',
@@ -69,8 +69,7 @@ export class UserInterface extends Component {
     return (
       <aside className="user-interface">
         <h2>Commander <span>{ this.props.playerName }</span></h2>
-        { this.state.currentQuestion && 
-          < ChallengeCard challenge={ this.state.currentQuestion }/> }
+        < ChallengeCard challenge={ this.state.currentQuestion }/> 
         <form onSubmit={ this.verifyAnswer }>
           <label htmlFor="command-input">Command Center</label>
           <input 
