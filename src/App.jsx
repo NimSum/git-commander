@@ -11,7 +11,8 @@ class App extends Component {
       challenges: [],
       currentRound: 1,
       startGame: false,
-      playerName: ''
+      playerName: '',
+      collide: false
     }
   }
   
@@ -35,8 +36,10 @@ class App extends Component {
     })
   }
 
+  collide = () => {
+    this.setState( {collide: !this.state.collide} )
+  }
   
-
   render() {
     return !this.state.startGame 
     ? (<div>
@@ -47,10 +50,13 @@ class App extends Component {
         < Header />
         <main>
           < GameWindow 
-            currRound={ this.state.currentRound }/>
+            currRound={ this.state.currentRound }
+            activateCollition={ this.collide }
+            { ...this.state }/>
           < UserInterface 
             nextRound={ this.nextRound }
-            { ...this.state } />
+            { ...this.state } 
+            activateCollition={ this.collide }/>
         </main>   
       </div>)
   }

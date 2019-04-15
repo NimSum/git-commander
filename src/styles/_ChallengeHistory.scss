@@ -1,0 +1,16 @@
+section.challenge-history {
+  height: 30%;
+  overflow: scroll;
+
+  article {
+    text-align: left;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid black;
+
+    p {
+      margin: 5px;
+    }
+  }
+  
+}

@@ -10,20 +10,21 @@ div.progress-indicator {
   top: 0;
 
   .current-round {
-    background-color: skyblue;
+    background-color: hsla(99, 100%, 50%, .8);
   }
 
   span {
     width: 30%;
     height: 30%;
-    background-color: white;
+    background-color: rgba(255, 255, 255, .7);
+    border-top: 1px solid black;
   }
 
   span:first-child,
   span:last-child  {
-    width: 80px;
-    margin: 0;
-    height: 35px;
+    width: 100px;
+    padding: 5px;
+    height: 45px;
     text-align: center;
     font-size: 1.3rem;
     font-family: $secondaryFont;

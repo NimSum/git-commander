@@ -14,7 +14,9 @@ export class GameWindow extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(this.props.currRound !== nextProps) {
+    if (nextProps.collide === true) {
+      this.collideWithObstacle();
+    } else if (this.props.currRound + 1 === nextProps.currentRound) {
       this.moveOctocat();
     }
   }
@@ -23,13 +25,25 @@ export class GameWindow extends Component {
     this.generateObstacles();
   }
 
+  collideWithObstacle() {
+    this.setState({ moveObstacle: true }, () => {
+      setTimeout(() => {
+        this.generateObstacles();
+        this.setCollitionCourse();
+        this.setState({ moveObstacle: false });
+        this.props.activateCollition();
+      }, 3000);
+    })
+  }
+
   moveOctocat() {
     this.setState({
       octoCatPosition: this.state.clearPath,
       moveObstacle: !this.state.moveObstacle
     }, () => setTimeout(()=> {
+      let possiblePos = [1,2,3,4,5].filter(num => num !== this.state.clearPath).sort(() => .5 - Math.random());
         this.setState({
-          clearPath: Math.round(Math.random() * (5 - 1) + 1),
+          clearPath: possiblePos.pop(),
           moveObstacle: !this.state.moveObstacle
         }, this.generateObstacles);
       }, 3000)) 
@@ -38,7 +52,7 @@ export class GameWindow extends Component {
   generateObstacles = () => {
     const obstacles = [];
     const obstaclePositions = [];
-    for (let i = 0; i <= this.props.currRound + 2; i++) {
+    for (let i = 0; i <= this.props.currRound + 10; i++) {
       let randomLocation = Math.round(Math.random() * (5 - 1) + 1);
       let position = this.state.clearPath === randomLocation
         ? randomLocation + 1 + Math.round(Math.random()).toString()
@@ -58,15 +72,15 @@ export class GameWindow extends Component {
   }
 
   setCollitionCourse() {
-    const changePos = !this.state.obstaclePositions.some(num => (this.state.octoCatPosition + '1') === num)
+    const changePos = !this.state.obstaclePositions.some(num => 
+      (this.state.octoCatPosition + '1') === num 
+      || (this.state.octoCatPosition + '0') === num)
     if(changePos) {
-      this.setState({octoCatPosition: this.state.obstaclePositions.length 
-        ? parseInt(this.state.obstaclePositions
+      this.setState({octoCatPosition: parseInt(this.state.obstaclePositions
           .sort(() => .5 - Math.random())
           .pop()
           .toString()
           .charAt(0))
-        : 1
       })
     }
   }
