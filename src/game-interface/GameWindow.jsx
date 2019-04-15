@@ -87,7 +87,7 @@ export class GameWindow extends Component {
 
   render() {
     return (
-      <section className="game-window">
+      <section className={`game-window ${this.props.currRound === 6 && 'darket-background'}`}>
         <div 
           className={`obstacle-container ${this.state.moveObstacle ? 'obstacles-move' : undefined}`}>
           {this.state.obstacles}
