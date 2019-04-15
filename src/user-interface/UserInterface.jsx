@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { ChallengeCard } from './ChallengeCard';
+import { ChallengeHistory } from './ChallengeHistory'
 import { ChargeBar } from './ChargeBar';
 
 export class UserInterface extends Component {
@@ -9,7 +10,8 @@ export class UserInterface extends Component {
       currentQuestion: null,
       currDifficulty: 1,
       questionsByDiff: [],
-      userAnswer: ''
+      userAnswer: '',
+      challengeHistory: []
     }
   }
 
@@ -31,11 +33,18 @@ export class UserInterface extends Component {
     e.preventDefault();
     if (this.state.currentQuestion.answer === this.state.userAnswer) {
       e.target.reset();
+      this.saveSolvedChallenge();
       this.changeDifficulty();
       this.props.nextRound();
     } else {
       this.incorrectAnswer();
     }
+  }
+
+  saveSolvedChallenge() {
+    this.setState({
+      challengeHistory: this.state.challengeHistory.concat(this.state.currentQuestion)
+    })
   }
 
   incorrectAnswer() {
@@ -71,6 +80,8 @@ export class UserInterface extends Component {
             autoFocus/>
         </form>
         < ChargeBar />
+        < ChallengeHistory
+          challenges={this.state.challengeHistory} />
       </aside>
     )
   }

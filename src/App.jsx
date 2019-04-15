@@ -40,7 +40,6 @@ class App extends Component {
     this.setState( {collide: !this.state.collide} )
   }
   
-
   render() {
     return !this.state.startGame 
     ? (<div>
