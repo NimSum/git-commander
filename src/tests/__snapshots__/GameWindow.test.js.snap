@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Game Window Should match snapshot 1`] = `
+<section
+  className="game-window"
+>
+  <div
+    className="obstacle-container undefined"
+  >
+    <img
+      alt="obstacle"
+      className="obstacle obstacle-pos-31"
+      key="0"
+      src="http://clipart-library.com/image_gallery/n756983.gif"
+    />
+    <img
+      alt="obstacle"
+      className="obstacle obstacle-pos-20"
+      key="1"
+      src="http://clipart-library.com/image_gallery/n756983.gif"
+    />
+    <img
+      alt="obstacle"
+      className="obstacle obstacle-pos-50"
+      key="2"
+      src="http://clipart-library.com/image_gallery/n756983.gif"
+    />
+    <img
+      alt="obstacle"
+      className="obstacle obstacle-pos-21"
+      key="3"
+      src="http://clipart-library.com/image_gallery/n756983.gif"
+    />
+  </div>
+  <img
+    alt="obstacle"
+    className="octo-ship ship-position-5"
+    src="jetpacktocat.png"
+  />
+  <ProgressIndicator
+    currRound={1}
+  />
+</section>
+`;
