@@ -50,8 +50,7 @@ class App extends Component {
             currRound={ this.state.currentRound }/>
           < UserInterface 
             nextRound={ this.nextRound }
-            { ...this.state }
-          />
+            { ...this.state } />
         </main>   
       </div>)
   }
