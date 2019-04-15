@@ -33,7 +33,13 @@ export class UserInterface extends Component {
       e.target.reset();
       this.changeDifficulty();
       this.props.nextRound();
+    } else {
+      this.incorrectAnswer();
     }
+  }
+
+  incorrectAnswer() {
+    this.props.activateCollition();
   }
 
   changeDifficulty() {

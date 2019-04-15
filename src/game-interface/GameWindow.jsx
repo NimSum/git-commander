@@ -14,13 +14,26 @@ export class GameWindow extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(this.props.currRound !== nextProps) {
+    if (nextProps.collide === true) {
+      this.collideWithObstacle();
+    } else if (this.props.currRound + 1 === nextProps.currentRound) {
       this.moveOctocat();
     }
   }
   
   componentDidMount() {
     this.generateObstacles();
+  }
+
+  collideWithObstacle() {
+    this.setState({ moveObstacle: true }, () => {
+      setTimeout(() => {
+        this.generateObstacles();
+        this.setCollitionCourse();
+        this.setState({ moveObstacle: false });
+        this.props.activateCollition();
+      }, 3000);
+    })
   }
 
   moveOctocat() {
