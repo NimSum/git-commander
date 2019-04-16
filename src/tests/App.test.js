@@ -4,6 +4,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import { shallow , configure } from 'enzyme';
 
 configure({adapter: new Adapter()});
+jest.useFakeTimers();
 
 describe('Challenge card' , () => {
 
@@ -13,7 +14,9 @@ describe('Challenge card' , () => {
     challenges: [],
     currentRound: 1,
     startGame: false,
-    playerName: ''
+    playerName: '',
+    collide: false,
+    resetGame: false
   }
 
   beforeEach(() => {
@@ -43,6 +46,26 @@ describe('Challenge card' , () => {
     expect(wrapper.state().currentRound).toEqual(3);
     wrapper.instance().nextRound();
     expect(wrapper.state().currentRound).toEqual(4);
+  })
+
+  it('Should be able to start and end collision', () => {
+    wrapper.instance().collide(true);
+    expect(wrapper.state().collide).toEqual(true);
+    expect(setTimeout).toHaveBeenCalled();
+    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 3000);
+
+    wrapper.instance().collide(false);
+    expect(wrapper.state().collide).toEqual(false);
+    expect(setTimeout).toHaveBeenCalled();
+    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 3000);
+  })
+
+  it('Should be able to reset game', () => {
+    wrapper.state().currentRound = 5;
+
+    wrapper.instance().resetGame();
+    expect(wrapper.state().currentRound).toEqual(1);
+    
   })
 
 })

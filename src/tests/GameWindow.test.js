@@ -4,10 +4,10 @@ import Adapter from 'enzyme-adapter-react-16';
 import { shallow , configure } from 'enzyme';
 
 configure({adapter: new Adapter()});
+jest.useFakeTimers();
 
 describe('Game Window' , () => {
   
-  jest.useFakeTimers();
   let wrapper;
   const currRound = 1;
   

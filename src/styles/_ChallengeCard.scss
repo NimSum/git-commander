@@ -1,7 +1,11 @@
 article.challenge-card {
-  background-color: $secondary-light;
+  background-color: $primary-dark;
   
   div {
-    height: 50%;
+    color: $question-font-color;
+    font-family: $code-font;
+    margin: 20px;
+    padding: 10px;
+    border: 1px dashed blue;
   }
 }

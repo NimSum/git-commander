@@ -38,10 +38,10 @@ class App extends Component {
     })
   }
 
-  collide = (onOff) => {
-    this.setState( {collide: onOff }
+  collide = (bool) => {
+    this.setState( {collide: bool }
       , () => setTimeout(() => {
-        if (onOff) this.setState( {resetGame: true } )
+        if (bool) this.setState( {resetGame: true } )
         }, 3000 ))
   }
 

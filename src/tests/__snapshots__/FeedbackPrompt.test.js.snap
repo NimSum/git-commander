@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Game Window Should match snapshot 1`] = `
+<article
+  className="user-prompt"
+>
+  <h3>
+    Incorrect!
+  </h3>
+  <p>
+    Would you like to try again ?
+  </p>
+  <button
+    type="button"
+  >
+    PPPPPRACTICE
+  </button>
+</article>
+`;
+
+exports[`Game Window Should match snapshot 2`] = `
+<article
+  className="user-prompt"
+>
+  <h3>
+    You have reached Remote Repo!
+  </h3>
+  <p>
+    You can keep going by pressing button below 
+  </p>
+  <button
+    type="button"
+  >
+    git Good
+  </button>
+</article>
+`;
+
+exports[`Game Window Should match snapshot 3`] = `
+<div
+  className="solution-box"
+>
+  <h4>
+    Incorrect!
+  </h4>
+  <p>
+    The correct command was:
+  </p>
+  <p>
+    git checkout steer-ship
+  </p>
+</div>
+`;
+
+exports[`Game Window Should match snapshot 4`] = `
+<div
+  className="solution-box"
+>
+  <h4>
+    Correct!
+  </h4>
+  <p>
+    Your answer was:
+  </p>
+  <p>
+    git checkout steer-ship
+  </p>
+</div>
+`;
+
+exports[`Game Window Should match snapshot incorrect answer 1`] = `
+<div
+  className="solution-box"
+>
+  <h4>
+    Incorrect!
+  </h4>
+  <p>
+    The correct command was:
+  </p>
+  <p>
+    git checkout steer-ship
+  </p>
+</div>
+`;
+
+exports[`Game Window Should match snapshot of game reset 1`] = `
+<article
+  className="user-prompt"
+>
+  <h3>
+    Incorrect!
+  </h3>
+  <p>
+    Would you like to try again ?
+  </p>
+  <button
+    type="button"
+  >
+    PPPPPRACTICE
+  </button>
+</article>
+`;
+
+exports[`Game Window Should match snapshot of winning 1`] = `
+<article
+  className="user-prompt"
+>
+  <h3>
+    You have reached Remote Repo!
+  </h3>
+  <p>
+    You can keep going by pressing button below 
+  </p>
+  <button
+    type="button"
+  >
+    git Good
+  </button>
+</article>
+`;
+
+exports[`Game Window Should match snapshot or correct answer 1`] = `
+<div
+  className="solution-box"
+>
+  <h4>
+    Correct!
+  </h4>
+  <p>
+    Your answer was:
+  </p>
+  <p>
+    git checkout steer-ship
+  </p>
+</div>
+`;

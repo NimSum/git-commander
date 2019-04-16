@@ -33,7 +33,7 @@ export class UserInterface extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentRound === 7) {
       this.generateChallenge();
-    }else if (this.props.resetGame === 'reset') {
+    } else if (nextProps.resetGame === 'reset') {
       this.setState({
         currDifficulty: 1,
         showAnswer: false
