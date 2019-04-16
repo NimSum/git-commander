@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Game Window Should match snapshot 1`] = `
+<section
+  className="challenge-history"
+>
+  <h4>
+    None Yet
+  </h4>
+</section>
+`;

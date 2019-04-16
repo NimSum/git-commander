@@ -5,6 +5,8 @@ import { shallow , configure } from 'enzyme';
 
 configure({adapter: new Adapter()});
 
+jest.useFakeTimers();
+
 describe('User Interface' , () => {
   const mockData = [{
       "statement" : "Our Git spaceship needs to switch to a different branch to steer the ship!",
@@ -29,20 +31,32 @@ describe('User Interface' , () => {
     },
     preventDefault: () => {}
   };
-  const mockNextRound = jest.fn();
+
+  const incorrectAnsEvent = {
+    target: { 
+      value: 'NIMSUM',
+      reset: () => {}
+    },
+    preventDefault: () => {}
+  };
+
   const mockProps = {    
     challenges: mockData,
     currentRound: 1
   };
+  const mockNextRound = jest.fn();
+  const mockActivateCollision = jest.fn();
   let wrapper;
+  let spyGenerateChallenge;
 
   beforeEach(() => {
     wrapper = shallow(
       < UserInterface 
         nextRound={mockNextRound}
-        {...mockProps}
-      />
+        activateCollition={mockActivateCollision}
+        {...mockProps} />
     );
+    spyGenerateChallenge = jest.spyOn(wrapper.instance(), 'generateChallenge');
   });
 
   it('Should match render snapshot', () => {
@@ -53,33 +67,75 @@ describe('User Interface' , () => {
     expect(wrapper.state()).toEqual({
       currentQuestion: mockData[0],
       currDifficulty: 1,
-      questionsByDiff: [mockData[0]],
-      userAnswer: ''
+      questionsByDiff: [mockData[1]],
+      userAnswer: '',
+      challengeHistory: [],
+      showAnswer: false,
     });
   })
 
   it('Should handle user command input', () => {
     wrapper.instance().handleChange(mockEvent);
-    expect(wrapper.state('userAnswer')).toEqual('git checkout steer-ship');
+    expect(wrapper.state().userAnswer).toEqual('git checkout steer-ship');
   })
 
-  it('Should verify user answer', () => {
-    const spy = jest.spyOn(UserInterface.prototype, 'changeDifficulty');
+  it('Should be able to generate challenge', () => {
+    wrapper.instance().generateChallenge();
+    expect(wrapper.state().questionsByDiff).toHaveLength(1);
+    expect(wrapper.state().currentQuestion).toEqual(mockData[0]);
+  })
 
+  it('Should be able to activate collition course', () => {
+    wrapper.instance().incorrectAnswer()
+    expect(mockActivateCollision).toHaveBeenCalled();
+  })
+
+  it('Should perform tasks when user answer is correct', () => {
     wrapper.instance().handleChange(mockEvent);
     expect(wrapper.state('userAnswer')).toEqual('git checkout steer-ship');
 
     wrapper.instance().verifyAnswer(mockEvent);
-    expect(spy).toHaveBeenCalled();
+    expect(wrapper.state('showAnswer')).toEqual('correct');
     expect(mockNextRound).toHaveBeenCalled();
+    expect(setTimeout).toHaveBeenCalled();
+    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 3000);
+  })
+
+  it('Should perform tasks when user answer is NOT correct', () => {
+    const spyIncorrectAns = jest.spyOn( UserInterface.prototype, 'incorrectAnswer')
+    
+    wrapper.instance().handleChange(incorrectAnsEvent);
+    expect(wrapper.state('userAnswer')).toEqual('NIMSUM');
+
+    wrapper.instance().verifyAnswer(incorrectAnsEvent);
+    expect(wrapper.state('showAnswer')).toEqual('incorrect');
+
+    expect(spyIncorrectAns).toHaveBeenCalled();
   })
 
   it('Should change difficulty', () => {
-    const spy = jest.spyOn(wrapper.instance(), 'generateChallenge');
-    
     wrapper.instance().changeDifficulty();
-    expect(spy).toHaveBeenCalled();
+    expect(spyGenerateChallenge).toHaveBeenCalled();
+  })
+  
+  it('Should generate challenge if player decides to keep going', () => {
+    const mockRound = { currentRound: 7 };
+
+    wrapper.setProps(mockRound);
+    expect(spyGenerateChallenge).toHaveBeenCalled();
   })
 
+  it('Should reset game', () => {
+    const mockReset = { resetGame: 'reset' };
+
+    wrapper.state().currDifficulty = 4;
+    wrapper.state().showAnswer = true;
+    
+    wrapper.setProps(mockReset);
+    
+    expect(wrapper.state().currDifficulty).toEqual(1);
+    expect(wrapper.state().showAnswer).toEqual(false);
+    expect(spyGenerateChallenge).toHaveBeenCalled();
+  })
 
 })

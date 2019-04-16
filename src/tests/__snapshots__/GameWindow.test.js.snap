@@ -2,26 +2,27 @@
 
 exports[`Game Window Should match snapshot 1`] = `
 <section
-  className="game-window"
+  className="game-window 
+          false"
 >
   <div
     className="obstacle-container undefined"
   >
     <img
       alt="obstacle"
-      className="obstacle obstacle-pos-31"
+      className="obstacle obstacle-pos-40"
       key="0"
       src="http://clipart-library.com/image_gallery/n756983.gif"
     />
     <img
       alt="obstacle"
-      className="obstacle obstacle-pos-20"
+      className="obstacle obstacle-pos-31"
       key="1"
       src="http://clipart-library.com/image_gallery/n756983.gif"
     />
     <img
       alt="obstacle"
-      className="obstacle obstacle-pos-50"
+      className="obstacle obstacle-pos-41"
       key="2"
       src="http://clipart-library.com/image_gallery/n756983.gif"
     />
@@ -31,10 +32,58 @@ exports[`Game Window Should match snapshot 1`] = `
       key="3"
       src="http://clipart-library.com/image_gallery/n756983.gif"
     />
+    <img
+      alt="obstacle"
+      className="obstacle obstacle-pos-21"
+      key="4"
+      src="http://clipart-library.com/image_gallery/n756983.gif"
+    />
+    <img
+      alt="obstacle"
+      className="obstacle obstacle-pos-20"
+      key="5"
+      src="http://clipart-library.com/image_gallery/n756983.gif"
+    />
+    <img
+      alt="obstacle"
+      className="obstacle obstacle-pos-30"
+      key="6"
+      src="http://clipart-library.com/image_gallery/n756983.gif"
+    />
+    <img
+      alt="obstacle"
+      className="obstacle obstacle-pos-31"
+      key="7"
+      src="http://clipart-library.com/image_gallery/n756983.gif"
+    />
+    <img
+      alt="obstacle"
+      className="obstacle obstacle-pos-20"
+      key="8"
+      src="http://clipart-library.com/image_gallery/n756983.gif"
+    />
+    <img
+      alt="obstacle"
+      className="obstacle obstacle-pos-41"
+      key="9"
+      src="http://clipart-library.com/image_gallery/n756983.gif"
+    />
+    <img
+      alt="obstacle"
+      className="obstacle obstacle-pos-30"
+      key="10"
+      src="http://clipart-library.com/image_gallery/n756983.gif"
+    />
+    <img
+      alt="obstacle"
+      className="obstacle obstacle-pos-30"
+      key="11"
+      src="http://clipart-library.com/image_gallery/n756983.gif"
+    />
   </div>
   <img
     alt="obstacle"
-    className="octo-ship ship-position-5"
+    className="octo-ship ship-position-3"
     src="jetpacktocat.png"
   />
   <ProgressIndicator

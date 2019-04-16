@@ -18,7 +18,7 @@ export class GameWindow extends Component {
       this.collideWithObstacle();
     } else if (this.props.currRound + 1 === nextProps.currentRound) {
       this.moveOctocat();
-    } else if (this.props.resetGame === 'reset') {
+    } else if (nextProps.resetGame === 'reset') {
       this.generateObstacles();
     }
   }
