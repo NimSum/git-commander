@@ -1,9 +1,10 @@
 header {
-  background-color: black;
-  padding: 15px;
+  background-color: $primary-dark;
+  line-height: 10vh;
+  text-align: center;
+
   h1 {
     color: white;
-    text-align: center;
     font-family: $headerFont;
     font-size: 50px;
     margin: 0;

@@ -7,9 +7,9 @@ export function ChallengeHistory(props) {
         ? props.challenges.map((challenge, i) => {
         return (
           <article key={i}>
-            <p><span>Challenge: </span>{challenge.detail}</p>
-            <p><span>Answer: </span>{challenge.answer}</p>
-            <p><a 
+            <p class="challenge">Challenge: <span>{challenge.detail}</span></p>
+            <p class="command">Command: <span>{challenge.answer}</span></p>
+            <p><a
               target="_blank"
               rel="noopener noreferrer" 
               href="https://gist.github.com/NimSum/f190231f92183f4851074ef2502537c6">

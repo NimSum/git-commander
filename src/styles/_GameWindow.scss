@@ -1,9 +1,6 @@
 section.game-window {
-    background: url('./images/star-background.jpg');
-    animation: 2000s flow infinite linear;
-    background-repeat: repeat;
-    width: 100%;
-    height: 90vh;
+    background: url('./images/star-background.jpg') repeat 0 0;
+    animation: flow 1000s infinite linear; 
     position: relative;
 
   div.obstacle-container {
