@@ -28,11 +28,19 @@ export function FeedbackPrompt (props) {
           </button>
         </article>)
     break;
-    case props.correct:
+    case props.correct === 'incorrect':
     elContainer = 
       (<div className="solution-box">
         <h4>Incorrect!</h4>
         <p>The correct command was:</p>
+        <p>{ props.currentQuestion.answer }</p>
+      </div>)
+    break;
+    case props.correct === 'correct':
+    elContainer = 
+      (<div className="solution-box">
+        <h4>Correct!</h4>
+        <p>Your answer was:</p>
         <p>{ props.currentQuestion.answer }</p>
       </div>)
     break;
