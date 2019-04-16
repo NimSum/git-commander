@@ -6,6 +6,12 @@ section.challenge-history {
     color: $primary-light;
   }
 
+  h4 {
+    margin: 30px;
+    font-size: 2rem;
+    opacity: .2;
+  }
+
   article {
     text-align: left;
     border-radius: 10px;

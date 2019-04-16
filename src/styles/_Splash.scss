@@ -46,17 +46,46 @@ section.splash-page {
       font-size: 1.2rem;
     }
 
-    #userName {
+    input#userName {
       font-size: 2rem;
       text-align: center;
       height: 50px;
+      background-color: $primary-dark;
+      color: white;
+      font-family: $code-font;
+      border-radius: 10px 10px 0px 0px;
     }
     
     .start-game-btn {
       height: 50px;
       font-size: 1.5rem;
-
+      border-radius: 0px 0px 10px 10px;
       font-weight: bold;
+    }
+  }
+
+  div.instructions-cont {
+    width: 40%;
+    position: absolute;
+    top: 35%;
+    left: 40%;
+    background-color: $light-background;
+    border-radius: 20px;
+    padding: 10px;
+    
+    h3 {
+      font-size: 2rem;
+    }
+
+    h4 {
+      font-size: 1.2rem;
+    }
+
+    ol {
+      text-align: left;
+      width: 80%;
+      margin: 10px auto;
+      font-size: 1.2rem;
     }
   }
 }

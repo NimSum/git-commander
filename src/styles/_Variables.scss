@@ -13,6 +13,7 @@ $secondary-light: hsl(0, 0%, 93%);
 $command-input-color: hsl(216, 18%, 16%);
 $progress-bar-color: hsla(99, 100%, 50%, .8);
 $question-font-color: hsla(99, 100%, 50%, .8);
+$light-background: hsla(255, 255, 255, .5);
 
 $input-border: 2px solid  hsla(0, 0%, 93%, .5);;
 $input-border-radius: 10px;
@@ -143,4 +144,17 @@ $input-border-radius: 10px;
 .obstacles-move {
   transition: transform 3s ease-in-out;
   transform: translate(0, 90vh)
+}
+
+.obstacles-show {
+  animation: show-obstacle 2s ease-in-out;
+}
+
+@keyframes show-obstacle {
+  from { 
+    top: -20vh;
+  }
+  to { 
+    top: 0;
+  }
 }

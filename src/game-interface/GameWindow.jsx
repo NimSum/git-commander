@@ -93,7 +93,7 @@ export class GameWindow extends Component {
         className={`game-window 
           ${this.props.currRound === 6 && 'lighten-background'}`}>
         <div 
-          className={`obstacle-container ${this.state.moveObstacle ? 'obstacles-move' : undefined}`}>
+          className={`obstacle-container ${this.state.moveObstacle ? 'obstacles-move' : 'obstacles-show'}`}>
           {this.state.obstacles}
         </div>
         <img 
