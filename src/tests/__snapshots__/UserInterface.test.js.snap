@@ -6,6 +6,7 @@ exports[`User Interface Should match render snapshot 1`] = `
 >
   <h2>
     Commander 
+    <span />
   </h2>
   <ChallengeCard
     challenge={
@@ -18,22 +19,31 @@ exports[`User Interface Should match render snapshot 1`] = `
         "statement": "Our Git spaceship needs to switch to a different branch to steer the ship!",
       }
     }
+    showAnswer={false}
   />
-  <form
-    onSubmit={[Function]}
+  <div
+    className="form-container"
   >
-    <label
-      htmlFor="command-input"
+    <form
+      onSubmit={[Function]}
     >
-      Command Center
-    </label>
-    <input
-      autoFocus={true}
-      id="command-input"
-      onChange={[Function]}
-      type="text"
-    />
-  </form>
-  <ChargeBar />
+      <label
+        htmlFor="command-input"
+      />
+      <input
+        autoFocus={true}
+        id="command-input"
+        onChange={[Function]}
+        placeholder="Enter Your Command"
+        type="text"
+      />
+    </form>
+  </div>
+  <h3>
+    Challenge History:
+  </h3>
+  <ChallengeHistory
+    challenges={Array []}
+  />
 </aside>
 `;

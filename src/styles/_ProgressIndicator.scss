@@ -10,14 +10,14 @@ div.progress-indicator {
   top: 0;
 
   .current-round {
-    background-color: hsla(99, 100%, 50%, .8);
+    background-color: $progress-bar-color;
   }
 
   span {
     width: 30%;
+    border-top: 1px solid $primary-dark;
     height: 30%;
     background-color: rgba(255, 255, 255, .7);
-    border-top: 1px solid black;
   }
 
   span:first-child,
@@ -29,4 +29,14 @@ div.progress-indicator {
     font-size: 1.3rem;
     font-family: $secondaryFont;
   }
+
+  span:first-child {
+    border-radius: 0px 0px 0px 20px;
+    border: none;
+  }
+
+  span:last-child {
+    border-radius: 20px 0px 0px 0px;
+  }
+
 }

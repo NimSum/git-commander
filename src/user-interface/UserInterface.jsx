@@ -45,12 +45,16 @@ export class UserInterface extends Component {
     e.preventDefault();
     e.target.reset();
     if (this.state.currentQuestion.answer === this.state.userAnswer) {
-      this.saveSolvedChallenge();
-      this.changeDifficulty();
+      this.setState( {showAnswer: 'correct'} )
       this.props.nextRound();
+      setTimeout(() => {
+        this.setState( {showAnswer: false } )
+        this.saveSolvedChallenge();
+        this.changeDifficulty();
+      }, 3000);
     } else {
       this.incorrectAnswer();
-      this.setState( {showAnswer: true} )
+      this.setState( {showAnswer: 'incorrect'} )
     }
   }
 
@@ -94,10 +98,14 @@ export class UserInterface extends Component {
               type="text" 
               placeholder="Enter Your Command"
               autoFocus/>
-            {this.state.showAnswer && 
+            { this.state.showAnswer === 'incorrect' && 
               < FeedbackPrompt 
-                correct={ true } 
-                {...this.state } />}
+                correct={ 'incorrect' } 
+                {...this.state } /> }
+            { this.state.showAnswer === 'correct' && 
+              < FeedbackPrompt 
+                correct={ 'correct' } 
+                {...this.state } /> }
           </form>  
         </div>
         {/* < ChargeBar /> */}

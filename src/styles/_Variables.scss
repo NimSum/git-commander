@@ -11,8 +11,8 @@ $secondary-dark: hsl(217, 10%, 25%);
 $primary-light: hsl(183, 100%, 35%);
 $secondary-light: hsl(0, 0%, 93%);
 $command-input-color:  hsl(216, 18%, 16%);
-
 $input-border: 2px solid  hsl(217, 10%, 25%);
+$progress-bar-color: hsla(99, 100%, 50%, .8);
 
 @keyframes upDown {
   0% { 
@@ -50,6 +50,15 @@ $input-border: 2px solid  hsl(217, 10%, 25%);
   to {
     background-position: 0 2000%;
   }
+}
+
+.octo-forward {
+  transition: transform 2.5s ease-in-out;
+  transform: translate(100vw, 0)
+}
+
+.lighten-background {
+  opacity: .5;
 }
 
 .ship-position-1 {
@@ -131,13 +140,4 @@ $input-border: 2px solid  hsl(217, 10%, 25%);
 .obstacles-move {
   transition: transform 3s ease-in-out;
   transform: translate(0, 90vh)
-}
-
-.octo-forward {
-  transition: transform 2.5s ease-in-out;
-  transform: translate(100vw, 0)
-}
-
-.darket-background {
-  opacity: .5;
 }
