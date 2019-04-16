@@ -54,7 +54,9 @@ describe('User Interface' , () => {
       currentQuestion: mockData[0],
       currDifficulty: 1,
       questionsByDiff: [mockData[0]],
-      userAnswer: ''
+      userAnswer: '',
+      challengeHistory: [],
+      showAnswer: false,
     });
   })
 
@@ -64,13 +66,10 @@ describe('User Interface' , () => {
   })
 
   it('Should verify user answer', () => {
-    const spy = jest.spyOn(UserInterface.prototype, 'changeDifficulty');
-
     wrapper.instance().handleChange(mockEvent);
     expect(wrapper.state('userAnswer')).toEqual('git checkout steer-ship');
-
     wrapper.instance().verifyAnswer(mockEvent);
-    expect(spy).toHaveBeenCalled();
+    expect(wrapper.state('showAnswer')).toEqual('correct');
     expect(mockNextRound).toHaveBeenCalled();
   })
 
