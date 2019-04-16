@@ -1,8 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Bungee+Outline');
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 
 $secondaryFont: 'IBM Plex Sans', sans-serif;
 $headerFont: 'Bungee Outline', cursive;
+$code-font: 'Source Code Pro', monospace;
+
+$primary-dark: hsl(216, 18%, 16%);
+$secondary-dark: hsl(217, 10%, 25%);
+$primary-light: hsl(183, 100%, 35%);
+$secondary-light: hsl(0, 0%, 93%);
+$command-input-color:  hsl(216, 18%, 16%);
+
+$input-border: 2px solid  hsl(217, 10%, 25%);
 
 @keyframes upDown {
   0% { 
@@ -17,9 +27,10 @@ $headerFont: 'Bungee Outline', cursive;
 
 @keyframes flow {
   100%{
-    background-position: 0 -200000%;
+    background-position: 0 -100000%;
   }
 }
+
 
 @keyframes spin {
   from {

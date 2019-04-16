@@ -17,7 +17,8 @@ header {
 main {
   display: flex;
   height: 90vh;
-  
+  background-color: $secondary-dark;
+
   section.game-window {
     width: 60vw;
   }

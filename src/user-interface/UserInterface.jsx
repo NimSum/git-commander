@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { ChallengeCard } from './ChallengeCard';
 import { ChallengeHistory } from './ChallengeHistory'
-import { ChargeBar } from './ChargeBar';
+import { FeedbackPrompt } from '../prompts/FeedbackPrompt';
 
 export class UserInterface extends Component {
   constructor(props) {
@@ -11,7 +11,8 @@ export class UserInterface extends Component {
       currDifficulty: 1,
       questionsByDiff: [],
       userAnswer: '',
-      challengeHistory: []
+      challengeHistory: [],
+      showAnswer: false,
     }
   }
 
@@ -34,7 +35,8 @@ export class UserInterface extends Component {
       this.generateChallenge();
     }else if (this.props.resetGame === 'reset') {
       this.setState({
-        currDifficulty: 1
+        currDifficulty: 1,
+        showAnswer: false
       }, () => this.generateChallenge());
     }
   }
@@ -48,6 +50,7 @@ export class UserInterface extends Component {
       this.props.nextRound();
     } else {
       this.incorrectAnswer();
+      this.setState( {showAnswer: true} )
     }
   }
 
@@ -79,17 +82,25 @@ export class UserInterface extends Component {
     return (
       <aside className="user-interface">
         <h2>Commander <span>{ this.props.playerName }</span></h2>
-        < ChallengeCard challenge={ this.state.currentQuestion }/> 
-        <form onSubmit={ this.verifyAnswer }>
-          <label htmlFor="command-input">Command Center</label>
-          <input 
-            onChange={ this.handleChange } 
-            id="command-input" 
-            type="text" 
-            placeholder="Enter Your Command"
-            autoFocus/>
-        </form>
-        < ChargeBar />
+        < ChallengeCard 
+          challenge={ this.state.currentQuestion }
+          showAnswer={ this.state.showAnswer }/> 
+        <div className="form-container">
+          <form onSubmit={ this.verifyAnswer }>
+            <label htmlFor="command-input"></label>
+            <input 
+              onChange={ this.handleChange } 
+              id="command-input" 
+              type="text" 
+              placeholder="Enter Your Command"
+              autoFocus/>
+            {this.state.showAnswer && 
+              < FeedbackPrompt 
+                correct={ true } 
+                {...this.state } />}
+          </form>  
+        </div>
+        {/* < ChargeBar /> */}
         <h3>Challenge History:</h3>
         < ChallengeHistory
           challenges={this.state.challengeHistory} />

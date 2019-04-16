@@ -1,26 +1,58 @@
 aside.user-interface {
   font-family: $secondaryFont;
-  text-align: center;
-  margin-left: 20px;
   display: flex;
   flex-direction: column;
+  background-color: $primary-light;
+  text-align: center;
 
   h2 {
     margin: 30px;
   }
 
-  form {
-    height: 10%;
-    margin: auto;
-    width: 90%;
-    border: 2px solid black;
+  h3 {
+    margin: 20px;
+  }
 
-    label {
-      display: block;
+  article.challenge-card {
+    flex: 1;
+  }
+  
+  div.form-container {
+    flex: 1;
+    background-color: $primary-dark;
+    position: relative;
+
+    form {
+      label {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      
+      input {
+        width: 100%;
+        height: 40px;
+        background-color: $command-input-color;
+        text-indent: 10px;
+        font-family: $code-font;
+        color: white;
+      }
     }
-    
-    input {
-      width: 100%;
+  }
+
+  div.solution-box {
+    margin: 20px;
+    color: white;
+
+    h4 {
+      font-size: 1.5rem;
     }
+    p {
+      margin: 5px;
+    }
+  }
+
+  section.challenge-history {
+    flex: 2;
   }
 }

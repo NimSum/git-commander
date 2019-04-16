@@ -28,6 +28,14 @@ export function FeedbackPrompt (props) {
           </button>
         </article>)
     break;
+    case props.correct:
+    elContainer = 
+      (<div className="solution-box">
+        <h4>Incorrect!</h4>
+        <p>The correct command was:</p>
+        <p>{ props.currentQuestion.answer }</p>
+      </div>)
+    break;
     default: 
     elContainer = (<div>HI</div>)
   }
