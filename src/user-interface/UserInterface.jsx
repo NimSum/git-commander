@@ -86,6 +86,7 @@ export class UserInterface extends Component {
     return (
       <aside className="user-interface">
         <h2>Commander <span>{ this.props.playerName }</span></h2>
+        <h3>Command Center:</h3>
         < ChallengeCard 
           challenge={ this.state.currentQuestion }
           showAnswer={ this.state.showAnswer }/> 
@@ -109,7 +110,6 @@ export class UserInterface extends Component {
           </form>  
         </div>
         {/* < ChargeBar /> */}
-        <h3>Challenge History:</h3>
         < ChallengeHistory
           challenges={this.state.challengeHistory} />
       </aside>

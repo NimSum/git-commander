@@ -3,6 +3,7 @@ import React from 'react';
 export function ChallengeHistory(props) {
   return (
     <section className="challenge-history">
+      <h3>Challenge History:</h3>
       {props.challenges.length 
         ? props.challenges.map((challenge, i) => {
         return (
