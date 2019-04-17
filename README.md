@@ -1,9 +1,9 @@
-## GIT COMMANDER
+# GIT COMMANDER
 #### gh-pages link: https://nimsum.github.io/git-commander/
 
 ### A game created to teach new developers about git commands
 
-# Game Instructions
+## Game Instructions
 
  ### Goal: Reach the remote repo!
  - Put your name then press Enter / click "Start"
