@@ -1,0 +1,20 @@
+{
+  "main.css": "/git-commander/static/css/main.bbf3a842.chunk.css",
+  "main.js": "/git-commander/static/js/main.c2320301.chunk.js",
+  "main.js.map": "/git-commander/static/js/main.c2320301.chunk.js.map",
+  "runtime~main.js": "/git-commander/static/js/runtime~main.bf353951.js",
+  "runtime~main.js.map": "/git-commander/static/js/runtime~main.bf353951.js.map",
+  "static/js/2.e703e8cc.chunk.js": "/git-commander/static/js/2.e703e8cc.chunk.js",
+  "static/js/2.e703e8cc.chunk.js.map": "/git-commander/static/js/2.e703e8cc.chunk.js.map",
+  "index.html": "/git-commander/index.html",
+  "precache-manifest.8b6cff29cd89b973cb77d89a53dcb791.js": "/git-commander/precache-manifest.8b6cff29cd89b973cb77d89a53dcb791.js",
+  "service-worker.js": "/git-commander/service-worker.js",
+  "static/css/main.bbf3a842.chunk.css.map": "/git-commander/static/css/main.bbf3a842.chunk.css.map",
+  "static/media/base-64-stars-bg.txt": "/git-commander/static/media/base-64-stars-bg.989681e3.txt",
+  "static/media/code-octocat.png": "/git-commander/static/media/code-octocat.b8ecdc64.png",
+  "static/media/explode-logo.png": "/git-commander/static/media/explode-logo.51c9b092.png",
+  "static/media/game-background.jpg": "/git-commander/static/media/game-background.5410f47b.jpg",
+  "static/media/jetpacktocat.png": "/git-commander/static/media/jetpacktocat.b9f0a08b.png",
+  "static/media/star-background.jpg": "/git-commander/static/media/star-background.ceda136c.jpg",
+  "static/media/star-flow.gif": "/git-commander/static/media/star-flow.d7731b2f.gif"
+}
