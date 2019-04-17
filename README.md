@@ -4,6 +4,12 @@
 ### A game created to teach new developers about git commands
 
 # Game Instructions
+
+ ### Goal: Reach the remote repo!
+ - Put your name then press Enter / click "Start"
+ - Read the prompts and type your git command based on the prompts
+ - Press Enter! You will know whether you got it right or wrong!
+ - Once you reach the "Remote Repo" you can keep going!
  
 # Installation
 
@@ -21,5 +27,7 @@
  - Tested with Jest/Enzyme
  
  # Learning Goals 
- 
- The primary goals of this project were for the developer to learn how do API fetches, how to use React, when to use a functional versus a class component, how to return/render JSX, conditional rendering, the relationship between parent and child components, and component heirarchy. Other objectives were for the developer to learn how to write Scss and optional ways to structure files for components.
+ - Implement React to the best of my current capability
+ - Use fetch calls for data
+ - Test all components using Jes & Enzyme
+ - Animations and timed function calls
