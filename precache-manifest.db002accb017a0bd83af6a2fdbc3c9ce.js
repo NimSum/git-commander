@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "6df698deae9e5eb8aaf1",
-    "url": "/git-commander/static/css/main.bbf3a842.chunk.css"
+    "revision": "1fa3690e3f22d8b79e11",
+    "url": "/git-commander/static/css/main.7a8c6838.chunk.css"
   },
   {
-    "revision": "6df698deae9e5eb8aaf1",
+    "revision": "1fa3690e3f22d8b79e11",
     "url": "/git-commander/static/js/main.c2320301.chunk.js"
   },
   {
@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "/git-commander/static/media/star-flow.d7731b2f.gif"
   },
   {
-    "revision": "2509e8f6daba59739c4a3ea981b4be62",
+    "revision": "919422a40ad994c4a1ef724c0ce8722d",
     "url": "/git-commander/index.html"
   }
 ];
