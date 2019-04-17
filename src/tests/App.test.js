@@ -1,7 +1,7 @@
 import React from 'react';
 import App from '../App';
 import Adapter from 'enzyme-adapter-react-16';
-import { shallow , configure } from 'enzyme';
+import { shallow , configure, mount } from 'enzyme';
 
 configure({adapter: new Adapter()});
 jest.useFakeTimers();
@@ -9,7 +9,7 @@ jest.useFakeTimers();
 describe('Challenge card' , () => {
 
 
-  let wrapper;
+
   const defaultState = {
     challenges: [],
     currentRound: 1,
@@ -19,11 +19,18 @@ describe('Challenge card' , () => {
     resetGame: false
   }
 
+  let wrapper;
   beforeEach(() => {
     wrapper = shallow(
       < App />
     );
   });
+  
+  it('Should fetch data when mounted', () => {
+    const spyComponentDidMount = jest.spyOn(App.prototype, 'componentDidMount')
+    let mockMount= mount(<App />)
+    expect(spyComponentDidMount).toHaveBeenCalled();
+  })
 
   it('Should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();

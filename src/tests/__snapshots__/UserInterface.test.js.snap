@@ -8,6 +8,9 @@ exports[`User Interface Should match render snapshot 1`] = `
     Commander 
     <span />
   </h2>
+  <h3>
+    Command Center:
+  </h3>
   <ChallengeCard
     challenge={
       Object {
@@ -39,9 +42,6 @@ exports[`User Interface Should match render snapshot 1`] = `
       />
     </form>
   </div>
-  <h3>
-    Challenge History:
-  </h3>
   <ChallengeHistory
     challenges={Array []}
   />

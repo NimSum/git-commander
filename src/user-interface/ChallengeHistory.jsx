@@ -3,12 +3,13 @@ import React from 'react';
 export function ChallengeHistory(props) {
   return (
     <section className="challenge-history">
+      <h3>Challenge History:</h3>
       {props.challenges.length 
         ? props.challenges.map((challenge, i) => {
         return (
           <article key={i}>
-            <p class="challenge">Challenge: <span>{challenge.detail}</span></p>
-            <p class="command">Command: <span>{challenge.answer}</span></p>
+            <p className="challenge">Challenge: <span>{challenge.detail}</span></p>
+            <p className="command">Command: <span>{challenge.answer}</span></p>
             <p><a
               target="_blank"
               rel="noopener noreferrer" 

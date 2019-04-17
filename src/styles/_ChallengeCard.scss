@@ -8,4 +8,7 @@ article.challenge-card {
     padding: 10px;
     border: 1px dashed blue;
   }
+  div:first-child {
+    font-family: $secondaryFont;
+  }
 }

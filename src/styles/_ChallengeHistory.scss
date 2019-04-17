@@ -2,13 +2,22 @@ section.challenge-history {
   overflow: scroll;
   background-color: $primary-light;
 
+  h3 {
+    color: $primary-light;
+  }
+
+  h4 {
+    margin: 30px;
+    font-size: 2rem;
+    opacity: .2;
+  }
+
   article {
     text-align: left;
     border-radius: 10px;
-    background-color: $secondary-light;
+    background-color: $secondary-dark;
     margin: 20px;
     padding: 10px;
-    border: 1px solid black;
 
     p {
       margin: 10px;
@@ -20,22 +29,26 @@ section.challenge-history {
     p.challenge span {
       margin: 0 10px;
       font-size: 1rem;
-      background-color: $secondary-dark;
+      background-color: $primary-dark;
+      border-radius: $input-border-radius;
       color: $secondary-light;
-      padding: 3px 10px;
+      padding: 4px 10px;
     }
 
     p.command span {
+        font-family: $code-font;
         background-color: $command-input-color;
         color: white;
         font-size: 1rem;
-        padding: 2px 10px;
+        padding: 4px 10px;
         border: $input-border;
+        border-radius: $input-border-radius;
         margin: 0 6px;
     }
 
     p a {
       margin: auto;
+      color: $primary-light;
     }
   }
   

@@ -15,11 +15,13 @@ export class Splash extends Component {
 
   startGame = e => {
     e.preventDefault();
-    this.setState( {octoForward: true} )
-    setTimeout(
-      ()=> this.props.startGame(this.state.userName)
-    , 100
-    )
+    if (this.state.userName.length > 0) {
+      this.setState( {octoForward: true} )
+      setTimeout(
+        ()=> this.props.startGame(this.state.userName)
+      , 2000
+      )
+    }
   }
 
   render() {
@@ -33,7 +35,8 @@ export class Splash extends Component {
               id="userName" 
               type="text" 
               onChange={ this.handleChange } 
-              autoFocus />
+              autoFocus 
+              placeholder="Name Required"/>
             <input 
               className="start-game-btn" 
               type="button" 
@@ -45,6 +48,17 @@ export class Splash extends Component {
           className={`octocat-ship ${this.state.octoForward ? 'octo-forward' : '' }`}
           src={ require("../images/jetpacktocat.png") } 
           alt="octocat"/>
+        <div className="instructions-cont">
+          <h3>Instructions:</h3>
+          <h4>Help octocat make it to remote repo!</h4>
+          <ol>
+            <li>Read the prompts for Instructions</li>
+            <li>Type in your command and press enter when ready!
+              <p><b>Be Careful! You only have one chance per challenge!</b></p>
+            </li>
+            <li>Once you reach the 'Remote' Repo, you win! You also have the option to keep going solve harder commands!</li>
+          </ol>
+        </div>
       </section>
     )
   }

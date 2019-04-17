@@ -10,10 +10,13 @@ $primary-dark: hsl(216, 18%, 16%);
 $secondary-dark: hsl(217, 10%, 25%);
 $primary-light: hsl(183, 100%, 35%);
 $secondary-light: hsl(0, 0%, 93%);
-$command-input-color:  hsl(216, 18%, 16%);
-$input-border: 2px solid  hsl(217, 10%, 25%);
+$command-input-color: hsl(216, 18%, 16%);
 $progress-bar-color: hsla(99, 100%, 50%, .8);
 $question-font-color: hsla(99, 100%, 50%, .8);
+$light-background: hsla(255, 255, 255, .5);
+
+$input-border: 2px solid  hsla(0, 0%, 93%, .5);;
+$input-border-radius: 10px;
 
 @keyframes upDown {
   0% { 
@@ -63,23 +66,27 @@ $question-font-color: hsla(99, 100%, 50%, .8);
 }
 
 .ship-position-1 {
-  transform: translate(0 , -100px);
+  transform: translate(0 , 0)
 }
 
 .ship-position-2 {
-  transform: translate(10vw, -200px);
+  transform: translate(10vw, 0)
 }
 
 .ship-position-3 {
-  transform: translate(22vw, -150px);
+  transform: translate(22vw, 0)
+}
+
+.explode {
+  transform: scale(2);
 }
 
 .ship-position-4 {
-  transform: translate(34vw, -20px);
+  transform: translate(34vw, 0)
 }
 
 .ship-position-5 {
-  transform: translate(46vw, -80px);
+  transform: translate(46vw, 0)
 }
 
 
@@ -141,4 +148,17 @@ $question-font-color: hsla(99, 100%, 50%, .8);
 .obstacles-move {
   transition: transform 3s ease-in-out;
   transform: translate(0, 90vh)
+}
+
+.obstacles-show {
+  animation: show-obstacle 2s ease-in-out;
+}
+
+@keyframes show-obstacle {
+  from { 
+    top: -20vh;
+  }
+  to { 
+    top: 0;
+  }
 }

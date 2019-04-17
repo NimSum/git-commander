@@ -2,12 +2,15 @@ header {
   background-color: $primary-dark;
   line-height: 10vh;
   text-align: center;
+  position: relative;
+  z-index: 5;
 
   h1 {
     color: white;
     font-family: $headerFont;
     font-size: 50px;
     margin: 0;
+    z-index: 2;
   }
 
   p {

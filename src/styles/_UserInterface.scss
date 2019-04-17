@@ -2,15 +2,22 @@ aside.user-interface {
   font-family: $secondaryFont;
   display: flex;
   flex-direction: column;
-  background-color: $primary-light;
+  background-color: $secondary-light;
   text-align: center;
 
   h2 {
-    margin: 30px;
+    margin: 20px;
+    padding: 10px;
+    background-color: $secondary-dark;
+    color: $secondary-light;
+    border-radius: 20px;
   }
 
   h3 {
-    margin: 20px;
+    margin: 0;
+    padding: 20px 0;
+    color: $secondary-light;
+    background-color: $secondary-dark;
   }
 
   article.challenge-card {

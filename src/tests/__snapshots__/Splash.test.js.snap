@@ -22,6 +22,7 @@ exports[`Progress Indicator Should match rendered snapshot 1`] = `
         autoFocus={true}
         id="userName"
         onChange={[Function]}
+        placeholder="Name Required"
         type="text"
       />
       <input
@@ -37,5 +38,31 @@ exports[`Progress Indicator Should match rendered snapshot 1`] = `
     className="octocat-ship "
     src="jetpacktocat.png"
   />
+  <div
+    className="instructions-cont"
+  >
+    <h3>
+      Instructions:
+    </h3>
+    <h4>
+      Help octocat make it to remote repo!
+    </h4>
+    <ol>
+      <li>
+        Read the prompts for Instructions
+      </li>
+      <li>
+        Type in your command and press enter when ready!
+        <p>
+          <b>
+            Be Careful! You only have one chance per challenge!
+          </b>
+        </p>
+      </li>
+      <li>
+        Once you reach the 'Remote' Repo, you win! You also have the option to keep going solve harder commands!
+      </li>
+    </ol>
+  </div>
 </section>
 `;
