@@ -10,22 +10,25 @@
  - Press Enter! You will know whether you got it right or wrong!
  - Once you reach the "Remote Repo" you can keep going!
  
-# Installation
-
+## Installation
  - clone the repo to your local machine
  - run npm install
  - run npm start to start the server
  - open your favorite browser to localhost:3000 (unless your terminal says otherwise)
  - Start playing!
  
- # Libraries / Frameworks in use
+ ## Images:
+ ![alt text](https://user-images.githubusercontent.com/22114952/56299484-5cb10280-60f1-11e9-8f6b-6a436855028e.png)
+ ![alt text](https://user-images.githubusercontent.com/22114952/56299485-5cb10280-60f1-11e9-96c0-04c7239128c9.png)
+ 
+ ## Libraries / Frameworks in use
  
  - React
  - JSX
  - Scss
  - Tested with Jest/Enzyme
  
- # Learning Goals 
+ ## Learning Goals 
  - Implement React to the best of my current capability
  - Use fetch calls for data
  - Test all components using Jes & Enzyme
