@@ -8,8 +8,8 @@ export function ChallengeHistory(props) {
         ? props.challenges.map((challenge, i) => {
         return (
           <article key={i}>
-            <p class="challenge">Challenge: <span>{challenge.detail}</span></p>
-            <p class="command">Command: <span>{challenge.answer}</span></p>
+            <p className="challenge">Challenge: <span>{challenge.detail}</span></p>
+            <p className="command">Command: <span>{challenge.answer}</span></p>
             <p><a
               target="_blank"
               rel="noopener noreferrer" 

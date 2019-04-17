@@ -19,7 +19,7 @@ class App extends Component {
   }
   
   componentDidMount() {
-    fetch('https://gist.githubusercontent.com/NimSum/f190231f92183f4851074ef2502537c6/raw/037ac94f752839244fc3781bd47fee1d81a12c71/git-commander-challenges')
+    fetch('https://gist.githubusercontent.com/NimSum/f190231f92183f4851074ef2502537c6/raw/783cf14b21ef1138cecfbcb0f17449544041e501/git-commander-challenges')
       .then(challenges => challenges.json())
       .then(challenges => this.setState({challenges: challenges}))
       .catch(error => { throw new Error(error) })

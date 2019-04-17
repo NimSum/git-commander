@@ -40,6 +40,7 @@ describe('Progress Indicator' , () => {
   })
 
   it('Should start game', () => {
+    wrapper.state().userName = 'NIMSUM'
     wrapper.instance().startGame(mockEvent);
     expect(wrapper.state('octoForward')).toEqual(true);
     setTimeout(() => expect(mockStartGame).toHaveBeenCalled(), 2000);

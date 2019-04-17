@@ -11,7 +11,7 @@ section.game-window {
       width: 15%;
       margin: 20px;
       position: absolute;
-      animation: 10s spin infinite linear;
+      animation: 7s spin infinite linear;
       transition: transform 1s ease-in-out;
     }
   }
@@ -19,8 +19,7 @@ section.game-window {
   .octo-ship {
     width: 20%;
     position: absolute;
-    z-index: 100;
-    bottom: 0;
+    bottom: 5%;
     transition: transform 1.9s ease-in-out;
   }
 }

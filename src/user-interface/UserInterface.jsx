@@ -11,7 +11,7 @@ export class UserInterface extends Component {
       currDifficulty: 1,
       questionsByDiff: [],
       userAnswer: '',
-      challengeHistory: [],
+      challengeHistory: JSON.parse(localStorage.getItem('storedChallenges')) || [],
       showAnswer: false,
     }
   }
@@ -21,8 +21,9 @@ export class UserInterface extends Component {
       .filter(challenge => challenge.difficulty === this.state.currDifficulty.toString())
       .sort(() => .5 - Math.random());
     this.setState({
-      questionsByDiff: questionsByDiff, 
-      currentQuestion: questionsByDiff.pop()
+      questionsByDiff: questionsByDiff,
+      currentQuestion: questionsByDiff.pop(),
+      userAnswer: ''
     })
   }
 
@@ -45,22 +46,27 @@ export class UserInterface extends Component {
     e.preventDefault();
     e.target.reset();
     if (this.state.currentQuestion.answer === this.state.userAnswer) {
-      this.setState( {showAnswer: 'correct'} )
+      this.setState( {showAnswer: 'correct', userAnswer: ''} )
       this.props.nextRound();
       setTimeout(() => {
         this.setState( {showAnswer: false } )
         this.saveSolvedChallenge();
         this.changeDifficulty();
       }, 3000);
-    } else {
+    } else if (this.state.userAnswer.length > 3) {
       this.incorrectAnswer();
       this.setState( {showAnswer: 'incorrect'} )
+    } else {
+      this.setState( {userAnswer: ''} )
+      return;
     }
   }
 
   saveSolvedChallenge() {
     this.setState({
-      challengeHistory: this.state.challengeHistory.concat(this.state.currentQuestion)
+      challengeHistory: [this.state.currentQuestion].concat(this.state.challengeHistory)
+    }, () => {
+      localStorage.setItem('storedChallenges', JSON.stringify(this.state.challengeHistory))
     })
   }
 
@@ -69,13 +75,14 @@ export class UserInterface extends Component {
   }
 
   changeDifficulty() {
+    let newDifficulty = this.state.currDifficulty + Math.round(Math.random() + .2);
     if (this.state.currDifficulty < 5) {
       this.setState({
-        currDifficulty: this.state.currDifficulty + Math.round(Math.random() + .1)
-      }, () => this.generateChallenge())
-    } else {
-      this.generateChallenge();
-    }
+        currDifficulty: newDifficulty
+      }, () => {
+        this.generateChallenge();
+      })
+    } 
   }
 
   handleChange = e => {
@@ -109,7 +116,6 @@ export class UserInterface extends Component {
                 {...this.state } /> }
           </form>  
         </div>
-        {/* < ChargeBar /> */}
         < ChallengeHistory
           challenges={this.state.challengeHistory} />
       </aside>

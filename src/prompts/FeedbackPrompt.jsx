@@ -12,7 +12,7 @@ export function FeedbackPrompt (props) {
           <button 
             onClick={ props.resetGame } 
             type="button">
-            PPPPPRACTICE
+            Purractice!
           </button>
         </article>)
     break;

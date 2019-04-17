@@ -9,7 +9,8 @@ export class GameWindow extends Component {
       obstacles: [],
       obstaclePositions: [],
       octoCatPosition: 1,
-      moveObstacle: false
+      moveObstacle: false,
+      octoExplode: false
     }
   }
 
@@ -30,9 +31,12 @@ export class GameWindow extends Component {
   collideWithObstacle() {
     this.setState({ moveObstacle: true }, () => {
       setTimeout(() => {
+        this.setState({octoExplode: true})
+      }, 1800);
+      setTimeout(() => {
         this.generateObstacles();
         this.setCollitionCourse();
-        this.setState({ moveObstacle: false });
+        this.setState({ moveObstacle: false, octoExplode: false });
         this.props.activateCollition(false);
       }, 3000);
     })
@@ -43,12 +47,14 @@ export class GameWindow extends Component {
       octoCatPosition: this.state.clearPath,
       moveObstacle: !this.state.moveObstacle
     }, () => setTimeout(()=> {
-      let possiblePos = [1, 2, 3, 4, 5].filter(num => num !== this.state.clearPath).sort(() => .5 - Math.random());
-        this.setState({
-          clearPath: possiblePos.pop(),
-          moveObstacle: !this.state.moveObstacle
-        }, this.generateObstacles);
-      }, 3000)) 
+      let possiblePos = 
+        [1, 2, 3, 4, 5].filter(num => num !== this.state.clearPath)
+        .sort(() => .5 - Math.random());
+      this.setState({
+        clearPath: possiblePos.pop(),
+        moveObstacle: !this.state.moveObstacle
+      }, this.generateObstacles);
+    }, 3000)) 
   } 
 
   generateObstacles = () => {
@@ -97,8 +103,8 @@ export class GameWindow extends Component {
           {this.state.obstacles}
         </div>
         <img 
-          className={`octo-ship ship-position-${this.state.octoCatPosition}` }
-          src={ require("../images/jetpacktocat.png") }
+          className={`octo-ship ship-position-${this.state.octoCatPosition} ${this.state.octoExplode && 'explode'}` }
+          src={ require(`../images/${this.state.octoExplode ? 'explode-logo.png' : 'jetpacktocat.png'}`) }
           alt="obstacle" />
         < ProgressIndicator 
           currRound={ this.props.currRound } />

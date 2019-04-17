@@ -15,11 +15,13 @@ export class Splash extends Component {
 
   startGame = e => {
     e.preventDefault();
-    this.setState( {octoForward: true} )
-    setTimeout(
-      ()=> this.props.startGame(this.state.userName)
-    , 100
-    )
+    if (this.state.userName.length > 0) {
+      this.setState( {octoForward: true} )
+      setTimeout(
+        ()=> this.props.startGame(this.state.userName)
+      , 2000
+      )
+    }
   }
 
   render() {
@@ -33,7 +35,8 @@ export class Splash extends Component {
               id="userName" 
               type="text" 
               onChange={ this.handleChange } 
-              autoFocus />
+              autoFocus 
+              placeholder="Name Required"/>
             <input 
               className="start-game-btn" 
               type="button" 

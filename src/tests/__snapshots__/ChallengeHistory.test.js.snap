@@ -4,6 +4,9 @@ exports[`Game Window Should match snapshot 1`] = `
 <section
   className="challenge-history"
 >
+  <h3>
+    Challenge History:
+  </h3>
   <h4>
     None Yet
   </h4>

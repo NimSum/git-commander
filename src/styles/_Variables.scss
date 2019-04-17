@@ -66,23 +66,27 @@ $input-border-radius: 10px;
 }
 
 .ship-position-1 {
-  transform: translate(0 , -100px);
+  transform: translate(0 , 0)
 }
 
 .ship-position-2 {
-  transform: translate(10vw, -200px);
+  transform: translate(10vw, 0)
 }
 
 .ship-position-3 {
-  transform: translate(22vw, -150px);
+  transform: translate(22vw, 0)
+}
+
+.explode {
+  transform: scale(2);
 }
 
 .ship-position-4 {
-  transform: translate(34vw, -20px);
+  transform: translate(34vw, 0)
 }
 
 .ship-position-5 {
-  transform: translate(46vw, -80px);
+  transform: translate(46vw, 0)
 }
 
 
