@@ -5,7 +5,7 @@
 ## Game Instructions
 
  ### Goal: Reach the remote repo!
-  ##### game-plan: https://gist.github.com/NimSum/bc900efc2b9114d9a27ad500876dec4b
+
  - Put your name then press Enter / click "Start"
  - Read the prompts and type your git command based on the prompts
  - Press Enter! You will know whether you got it right or wrong!
@@ -30,6 +30,7 @@
  - Tested with Jest/Enzyme
  
  ## Learning Goals 
+  ##### game-plan: https://gist.github.com/NimSum/bc900efc2b9114d9a27ad500876dec4b
  - Implement React to the best of my current capability
  - Use fetch calls for data
  - Test all components using Jes & Enzyme
