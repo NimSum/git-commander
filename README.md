@@ -1,5 +1,7 @@
 ## GIT COMMANDER
-A game created to learn about git commands and to practice them!
+### gh-pages link: https://nimsum.github.io/git-commander/
+
+#### A game created to teach new developers about git commands
 
 # Game Instructions
  
