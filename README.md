@@ -5,6 +5,7 @@
 ## Game Instructions
 
  ### Goal: Reach the remote repo!
+  ### game-plan: https://gist.github.com/NimSum/bc900efc2b9114d9a27ad500876dec4b
  - Put your name then press Enter / click "Start"
  - Read the prompts and type your git command based on the prompts
  - Press Enter! You will know whether you got it right or wrong!
