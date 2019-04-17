@@ -1,7 +1,6 @@
 # GIT COMMANDER
-#### gh-pages link: https://nimsum.github.io/git-commander/
-
 ### A game created to teach new developers about git commands
+#### gh-pages link: https://nimsum.github.io/git-commander/
 
 ## Game Instructions
 
