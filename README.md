@@ -25,7 +25,6 @@
  ## Libraries / Frameworks in use
  
  - React
- - JSX
  - Scss
  - Tested with Jest/Enzyme
  
