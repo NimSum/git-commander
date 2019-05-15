@@ -32,5 +32,5 @@
   ##### game-plan: https://gist.github.com/NimSum/bc900efc2b9114d9a27ad500876dec4b
  - Implement React to the best of my current capability
  - Use fetch calls for data
- - Test all components using Jes & Enzyme
+ - Test all components using Jest & Enzyme
  - Animations and timed function calls
