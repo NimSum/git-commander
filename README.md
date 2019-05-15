@@ -1,6 +1,7 @@
 # GIT COMMANDER
 ### A game created to teach new developers about git commands
 #### gh-pages link: https://nimsum.github.io/git-commander/
+##### project overview: https://gist.github.com/NimSum/bc900efc2b9114d9a27ad500876dec4b
 
 ## Game Instructions
 
@@ -29,7 +30,6 @@
  - Tested with Jest/Enzyme
  
  ## Learning Goals 
-  ##### game-plan: https://gist.github.com/NimSum/bc900efc2b9114d9a27ad500876dec4b
  - Implement React to the best of my current capability
  - Use fetch calls for data
  - Test all components using Jest & Enzyme
