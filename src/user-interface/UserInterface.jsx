@@ -4,10 +4,10 @@ import { ChallengeHistory } from './ChallengeHistory'
 import { FeedbackPrompt } from '../prompts/FeedbackPrompt';
 
 export class UserInterface extends Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
-      currentQuestion: {},
+      currQuestion: {},
       currDifficulty: 1,
       questionsByDiff: [],
       userAnswer: '',
@@ -15,18 +15,17 @@ export class UserInterface extends Component {
       showAnswer: false,
     }
   }
-
+  
   filterByDiff = () => {
-    const questionsByDiff = this.props.challenges
+    const filteredByDiff = this.props.challenges
     .filter(challenge => challenge.difficulty === this.state.currDifficulty.toString())
     .sort(() => .5 - Math.random());
-    this.setState({ questionsByDiff })
+    this.setState({ questionsByDiff: filteredByDiff })
   }
 
   generateChallenge = () => {
     const questionsByDiff = [...this.state.questionsByDiff];
     const selectedQuestion = questionsByDiff.pop();
-    console.log(selectedQuestion);
     this.setState({
       currQuestion: selectedQuestion, 
       questionsByDiff
@@ -34,7 +33,8 @@ export class UserInterface extends Component {
   }
 
   componentDidMount() {
-    this.generateChallenge();
+    this.filterByDiff();
+    setTimeout(this.generateChallenge);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -44,14 +44,17 @@ export class UserInterface extends Component {
       this.setState({
         currDifficulty: 1,
         showAnswer: false
-      }, () => this.generateChallenge());
+      }, () => {
+        this.filterByDiff();
+        setTimeout(this.generateChallenge);        
+      });
     }
   }
 
   verifyAnswer = e => {
     e.preventDefault();
     e.target.reset();
-    if (this.state.currentQuestion.answer === this.state.userAnswer) {
+    if (this.state.currQuestion.answer === this.state.userAnswer) {
       this.setState( {showAnswer: 'correct', userAnswer: ''} )
       this.props.nextRound();
       setTimeout(() => {
@@ -70,7 +73,7 @@ export class UserInterface extends Component {
 
   saveSolvedChallenge() {
     this.setState({
-      challengeHistory: [this.state.currentQuestion].concat(this.state.challengeHistory)
+      challengeHistory: [this.state.currQuestion].concat(this.state.challengeHistory)
     }, () => {
       localStorage.setItem('storedChallenges', JSON.stringify(this.state.challengeHistory))
     })
@@ -81,14 +84,16 @@ export class UserInterface extends Component {
   }
 
   changeDifficulty() {
-    let newDifficulty = this.state.currDifficulty + Math.round(Math.random() + .2);
-    if (this.state.currDifficulty < 5) {
+    let prevDifficulty = this.state.currDifficulty;
+    let newDifficulty = this.state.currDifficulty + Math.round(Math.random() + .2) ;
+    if (this.state.currDifficulty < 5 && prevDifficulty !== newDifficulty) {
       this.setState({
         currDifficulty: newDifficulty
       }, () => {
-        this.generateChallenge();
+        this.filterByDiff();
+        setTimeout(this.generateChallenge);        
       })
-    } 
+    } else this.generateChallenge(); 
   }
 
   handleChange = e => {
@@ -101,7 +106,7 @@ export class UserInterface extends Component {
         <h2>Commander <span>{ this.props.playerName }</span></h2>
         <h3>Command Center:</h3>
         < ChallengeCard 
-          challenge={ this.state.currentQuestion }
+          challenge={ this.state.currQuestion }
           showAnswer={ this.state.showAnswer }/> 
         <div className="form-container">
           <form onSubmit={ this.verifyAnswer }>

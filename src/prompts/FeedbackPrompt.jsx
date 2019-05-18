@@ -33,7 +33,7 @@ export function FeedbackPrompt (props) {
       (<div className="solution-box">
         <h4>Incorrect!</h4>
         <p>The correct command was:</p>
-        <p>{ props.currentQuestion.answer }</p>
+        <p>{ props.currQuestion.answer }</p>
       </div>)
     break;
     case props.correct === 'correct':
@@ -41,7 +41,7 @@ export function FeedbackPrompt (props) {
       (<div className="solution-box">
         <h4>Correct!</h4>
         <p>Your answer was:</p>
-        <p>{ props.currentQuestion.answer }</p>
+        <p>{ props.currQuestion.answer }</p>
       </div>)
     break;
     default: 
