@@ -138,4 +138,15 @@ describe('User Interface' , () => {
     expect(spyGenerateChallenge).toHaveBeenCalled();
   })
 
+  it('Should validate answer on  command submit', () => {
+    // const spyOnAnswerVerification = jest.spyOn(wrapper.instance(), 'verifyAnswer');
+    // wrapper.setState({userName: 'Nimsum'})
+    // wrapper.instance.startGame();
+    // wrapper.find('.form-container form').simulate(
+    //   'submit', mockEvent
+    // )
+    // expect(spyOnAnswerVerification).toHaveBeenCalled();
+  })
+  
+
 })

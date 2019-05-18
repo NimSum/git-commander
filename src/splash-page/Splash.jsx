@@ -33,6 +33,7 @@ export class Splash extends Component {
             <label htmlFor="userName">Your Commander Name:</label>
             <input 
               id="userName" 
+              maxLength='25'
               type="text" 
               onChange={ this.handleChange } 
               autoFocus 
