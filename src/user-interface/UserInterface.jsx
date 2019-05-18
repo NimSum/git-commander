@@ -16,14 +16,20 @@ export class UserInterface extends Component {
     }
   }
 
-  generateChallenge = () => {
+  filterByDiff = () => {
     const questionsByDiff = this.props.challenges
-      .filter(challenge => challenge.difficulty === this.state.currDifficulty.toString())
-      .sort(() => .5 - Math.random());
+    .filter(challenge => challenge.difficulty === this.state.currDifficulty.toString())
+    .sort(() => .5 - Math.random());
+    this.setState({ questionsByDiff })
+  }
+
+  generateChallenge = () => {
+    const questionsByDiff = [...this.state.questionsByDiff];
+    const selectedQuestion = questionsByDiff.pop();
+    console.log(selectedQuestion);
     this.setState({
-      questionsByDiff: questionsByDiff,
-      currentQuestion: questionsByDiff.pop(),
-      userAnswer: ''
+      currQuestion: selectedQuestion, 
+      questionsByDiff
     })
   }
 
