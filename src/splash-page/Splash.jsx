@@ -57,7 +57,7 @@ export class Splash extends Component {
             <li>Type in your command and press enter when ready!
               <p><b>Be Careful! You only have one chance per challenge!</b></p>
             </li>
-            <li>Once you reach the 'Remote' Repo, you win! You also have the option to keep going solve harder commands!</li>
+            <li>Once you reach the 'Remote' Repo, you win! You also have the option to keep going to solve harder commands!</li>
           </ol>
         </div>
       </section>
