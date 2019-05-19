@@ -30,13 +30,13 @@ export class GameWindow extends Component {
     this.setState({ moveObstacle: true }, () => {
       setTimeout(() => {
         this.setState({octoExplode: true})
-      }, 1800);
+      }, 1750);
       setTimeout(() => {
         this.generateObstacles();
         this.setCollitionCourse();
         this.setState({ moveObstacle: false, octoExplode: false });
         this.props.activateCollition(false);
-      }, 3000);
+      }, 2500);
     })
   }
 
