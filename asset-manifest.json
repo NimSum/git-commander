@@ -1,20 +1,16 @@
 {
-  "main.css": "/git-commander/static/css/main.7a8c6838.chunk.css",
-  "main.js": "/git-commander/static/js/main.388bf4e3.chunk.js",
-  "main.js.map": "/git-commander/static/js/main.388bf4e3.chunk.js.map",
+  "main.css": "/git-commander/static/css/main.6e95770b.chunk.css",
+  "main.js": "/git-commander/static/js/main.d59b303b.chunk.js",
+  "main.js.map": "/git-commander/static/js/main.d59b303b.chunk.js.map",
   "runtime~main.js": "/git-commander/static/js/runtime~main.bf353951.js",
   "runtime~main.js.map": "/git-commander/static/js/runtime~main.bf353951.js.map",
-  "static/js/2.e703e8cc.chunk.js": "/git-commander/static/js/2.e703e8cc.chunk.js",
-  "static/js/2.e703e8cc.chunk.js.map": "/git-commander/static/js/2.e703e8cc.chunk.js.map",
+  "static/js/2.0654b62a.chunk.js": "/git-commander/static/js/2.0654b62a.chunk.js",
+  "static/js/2.0654b62a.chunk.js.map": "/git-commander/static/js/2.0654b62a.chunk.js.map",
   "index.html": "/git-commander/index.html",
-  "precache-manifest.c97e4a8c1f61b1b48628eaf69686668b.js": "/git-commander/precache-manifest.c97e4a8c1f61b1b48628eaf69686668b.js",
+  "precache-manifest.8e2b14f3718adca2f438bdd3c3a4eb7b.js": "/git-commander/precache-manifest.8e2b14f3718adca2f438bdd3c3a4eb7b.js",
   "service-worker.js": "/git-commander/service-worker.js",
-  "static/css/main.7a8c6838.chunk.css.map": "/git-commander/static/css/main.7a8c6838.chunk.css.map",
-  "static/media/base-64-stars-bg.txt": "/git-commander/static/media/base-64-stars-bg.989681e3.txt",
-  "static/media/code-octocat.png": "/git-commander/static/media/code-octocat.b8ecdc64.png",
+  "static/css/main.6e95770b.chunk.css.map": "/git-commander/static/css/main.6e95770b.chunk.css.map",
   "static/media/explode-logo.png": "/git-commander/static/media/explode-logo.51c9b092.png",
-  "static/media/game-background.jpg": "/git-commander/static/media/game-background.5410f47b.jpg",
   "static/media/jetpacktocat.png": "/git-commander/static/media/jetpacktocat.b9f0a08b.png",
-  "static/media/star-background.jpg": "/git-commander/static/media/star-background.ceda136c.jpg",
-  "static/media/star-flow.gif": "/git-commander/static/media/star-flow.d7731b2f.gif"
+  "static/media/index.scss": "/git-commander/static/media/star-background.ceda136c.jpg"
 }
