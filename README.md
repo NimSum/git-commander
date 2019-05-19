@@ -34,3 +34,8 @@
  - Use fetch calls for data
  - Test all components using Jest & Enzyme
  - Animations and timed function calls
+ 
+ ## Future Upgrades in consideration
+ - Redux implementation
+ - Allow for different avatar
+ - Expand to Terminal commands
