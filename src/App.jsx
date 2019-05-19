@@ -14,7 +14,9 @@ class App extends Component {
       startGame: false,
       playerName: '',
       collide: false,
-      resetGame: false
+      resetGame: false,
+      inputDisabled: false,
+      shoWinnerPrompt: true
     };
   }
   
@@ -35,11 +37,19 @@ class App extends Component {
   nextRound = () => {
     this.setState( {
       currentRound: this.state.currentRound + 1
-    })
+    }, () => 
+      this.state.currentRound === 6 && this.setState({
+        inputDisabled: true
+      })
+    )
+  }
+
+  toggleCommandInput = (bool) => {
+    this.setState({ inputDisabled: bool })
   }
 
   collide = (bool) => {
-    this.setState( {collide: bool }
+    this.setState( {collide: bool, inputDisabled: true}
       , () => setTimeout(() => {
         if (bool) this.setState( {resetGame: true } )
         }, 3000 ))
@@ -48,12 +58,18 @@ class App extends Component {
   resetGame = () => {
     this.setState( {
       resetGame: 'reset',
-      currentRound: 1,
+      currentRound: 1
     }, () => 
       this.setState({
         resetGame: false
       })
     )
+  }
+
+  hideWinnerPrompt = () => {
+    this.setState({ 
+      shoWinnerPrompt: false,
+      currentRound: 7 })
   }
   
   render() {
@@ -77,11 +93,13 @@ class App extends Component {
             < FeedbackPrompt 
               reset={ true }
               resetGame={ this.resetGame }
+              toggleCommandInput={ this.toggleCommandInput }
             /> }
-          { this.state.currentRound === 6 && 
+          { (this.state.currentRound === 6 && this.state.shoWinnerPrompt) &&
             < FeedbackPrompt 
               winner={ true }
-              nextRound={ this.nextRound }
+              hideWinnerPrompt={ this.hideWinnerPrompt }
+              toggleCommandInput={ this.toggleCommandInput }
             /> }
         </main>   
       </div>)

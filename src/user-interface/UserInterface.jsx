@@ -91,7 +91,7 @@ export class UserInterface extends Component {
         currDifficulty: newDifficulty
       }, () => {
         this.filterByDiff();
-        setTimeout(this.generateChallenge);        
+        this.props.currentRound !== 6 && setTimeout(this.generateChallenge);        
       })
     } else this.generateChallenge(); 
   }
@@ -116,7 +116,8 @@ export class UserInterface extends Component {
               id="command-input" 
               type="text" 
               placeholder="Enter Your Command"
-              autoFocus/>
+              autoFocus
+              disabled={ this.props.inputDisabled }/>
             { this.state.showAnswer === 'incorrect' && 
               < FeedbackPrompt 
                 correct={ 'incorrect' } 

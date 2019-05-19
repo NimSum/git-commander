@@ -10,7 +10,10 @@ export function FeedbackPrompt (props) {
           <h3>Incorrect!</h3>
           <p>Would you like to try again ?</p>
           <button 
-            onClick={ props.resetGame } 
+            onClick={ () => {
+              props.resetGame();
+              props.toggleCommandInput(false);
+            }} 
             type="button">
             Purractice!
           </button>
@@ -22,7 +25,9 @@ export function FeedbackPrompt (props) {
           <h3>You have reached Remote Repo!</h3>
           <p>You can keep going by pressing button below </p>
           <button 
-            onClick={ props.nextRound } 
+            onClick={ () => {
+              props.hideWinnerPrompt();
+              props.toggleCommandInput(false); }} 
             type="button">
             git Good
           </button>
