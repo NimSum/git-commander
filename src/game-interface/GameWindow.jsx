@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { ProgressIndicator } from './ProgressIndicator';
+import explodeLogo from '../images/explode-logo.png';
+import jetpacktocat from '../images/jetpacktocat.png';
+import obstacleImg from '../images/obstacle.gif';
 
 export class GameWindow extends Component {
   constructor(props) {
@@ -68,7 +71,7 @@ export class GameWindow extends Component {
       ( <img 
         className={`obstacle obstacle-pos-${position}`}
         key={i}
-        src="http://clipart-library.com/image_gallery/n756983.gif" 
+        src={ obstacleImg }
         alt="obstacle" />))
     }
     this.setState({
@@ -102,7 +105,7 @@ export class GameWindow extends Component {
         </div>
         <img 
           className={`octo-ship ship-position-${this.state.octoCatPosition} ${this.state.octoExplode && 'explode'}` }
-          src={ require(`../images/${this.state.octoExplode ? 'explode-logo.png' : 'jetpacktocat.png'}`) }
+          src={ this.state.octoExplode ? explodeLogo : jetpacktocat }
           alt="obstacle" />
         < ProgressIndicator 
           currRound={ this.props.currRound } />
