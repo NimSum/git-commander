@@ -23,6 +23,11 @@ export class UserInterface extends Component {
     this.setState({ questionsByDiff: filteredByDiff })
   }
 
+  clearStoredCommands = () => {
+    this.setState({ challengeHistory: []});
+    localStorage.setItem('storedChallenges', JSON.stringify([]))
+  }
+
   generateChallenge = () => {
     const questionsByDiff = [...this.state.questionsByDiff];
     const selectedQuestion = questionsByDiff.pop();
@@ -129,6 +134,7 @@ export class UserInterface extends Component {
           </form>  
         </div>
         < ChallengeHistory
+          clearHistory={ this.clearStoredCommands }
           challenges={this.state.challengeHistory} />
       </aside>
     )

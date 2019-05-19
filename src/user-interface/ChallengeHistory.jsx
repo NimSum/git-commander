@@ -1,13 +1,17 @@
 import React from 'react';
 
 export function ChallengeHistory(props) {
+  const removeStoredChallenge = () => {
+
+  }
   return (
     <section className="challenge-history">
       <h3>Challenge History:</h3>
+      <button onClick={ props.clearHistory }>Clear History</button>
       {props.challenges.length 
-        ? props.challenges.map((challenge, i) => {
+        ? props.challenges.map(challenge => {
         return (
-          <article key={i}>
+          <article key={challenge.id}>
             <p className="challenge">Challenge: <span>{challenge.detail}</span></p>
             <p className="command">Command: <span>{challenge.answer}</span></p>
             <p><a
