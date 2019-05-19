@@ -12,7 +12,21 @@ section.challenge-history {
     opacity: .2;
   }
 
+  button {
+    border-radius: 20px;
+    margin: 5px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: red;
+    font-size: .7rem;
+    cursor: pointer;
+    border: 0;
+    z-index: 2;
+  }
+
   article {
+    position: relative;
     text-align: left;
     border-radius: 10px;
     background-color: $secondary-dark;
@@ -50,6 +64,7 @@ section.challenge-history {
       margin: auto;
       color: $primary-light;
     }
+
   }
   
 }

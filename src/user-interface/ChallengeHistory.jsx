@@ -1,7 +1,6 @@
 import React from 'react';
 
 export function ChallengeHistory(props) {
-
   return (
     <section className="challenge-history">
       <h3>Challenge History:</h3>
