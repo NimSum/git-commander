@@ -23,11 +23,6 @@ export class UserInterface extends Component {
     this.setState({ questionsByDiff: filteredByDiff })
   }
 
-  clearStoredCommands = () => {
-    this.setState({ challengeHistory: []});
-    localStorage.setItem('storedChallenges', JSON.stringify([]))
-  }
-
   generateChallenge = () => {
     const questionsByDiff = [...this.state.questionsByDiff];
     const selectedQuestion = questionsByDiff.pop();
@@ -84,6 +79,18 @@ export class UserInterface extends Component {
     })
   }
 
+  updateStoredChallenges = (deleteOrId) => {
+    if(deleteOrId === true) {
+      this.setState({ challengeHistory: []});
+      localStorage.setItem('storedChallenges', JSON.stringify([]))
+    } else {
+      const storedCopy = JSON.parse(localStorage.getItem('storedChallenges'));
+      const updated = storedCopy.filter(challenge => challenge.id !== deleteOrId)
+      this.setState({ challengeHistory: updated});
+      localStorage.setItem('storedChallenges', JSON.stringify(updated))
+    };
+  }
+
   incorrectAnswer() {
     this.props.activateCollition(true);
   }
@@ -134,8 +141,8 @@ export class UserInterface extends Component {
           </form>  
         </div>
         < ChallengeHistory
-          clearHistory={ this.clearStoredCommands }
-          challenges={this.state.challengeHistory} />
+          updateStoredChallenges={ this.updateStoredChallenges }
+          challenges={this.state.challengeHistory } />
       </aside>
     )
   }
